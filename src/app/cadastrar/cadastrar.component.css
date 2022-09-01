@@ -1,0 +1,24 @@
+#img-bg {
+    background-image: url("https://www.10wallpaper.com/wallpaper/1366x768/1512/Macro_water-High_Quality_HD_Wallpaper_1366x768.jpg");
+    min-height: 695px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mr-4 {
+    margin-right: 30px;
+}
+
+.color {
+    background-color: #345574;
+    
+}
+
+
+.color-2 {
+    background-color: #5b6c7e;
+}
+.align {
+    
+}
