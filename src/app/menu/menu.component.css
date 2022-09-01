@@ -1,0 +1,23 @@
+.fs-14{
+    font-size: 14pt !important;
+}
+
+.bg-padrao{
+    background-color: #5b6c7e;
+}
+
+.t-padrao{
+    color: aliceblue;
+}
+
+.out:hover{
+    color: #c8c2c2 !important;
+}
+
+.fa:hover{
+    color: #c8c2c2 !important;
+}
+
+a{
+    cursor: pointer;
+}
