@@ -1,0 +1,21 @@
+#img-bg {
+    background-image: url("https://i0.wp.com/www.iparh.com/wp-content/uploads/2018/06/fundo-azul-curvas-escuro.jpg?ssl=1");
+    min-height: 695px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mr-4 {
+    margin-right: 30px;
+}
+
+.color {
+    background-color: #345574;
+    
+}
+
+
+.color-2 {
+    background-color: #5b6c7e;
+}
