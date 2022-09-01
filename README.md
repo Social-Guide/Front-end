@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 
-##Grupo 2
+## Grupo 2
 
 Stefany Souza, Giovanna becker, Luiza Lima, Barbara Menezes e Luana Nascimento
 
