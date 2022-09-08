@@ -8,7 +8,7 @@
 
 #img-bg1 {
     background-image: url("../../assets/img/Água.jpg");
-    min-height: 695px;
+    min-height: 965px;
     background-position: right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,4 +28,26 @@
 
 .color-2 {
     background-color: #5b6c7e;
+}
+
+span{
+    position: absolute;
+    margin-left: 16px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: rgba(42, 56, 165, 0.579);
+}
+.form-group .form-control {
+    padding-left: 2.375rem;
+}
+
+.form-color{
+    background-color: #345574;
+}
+
+.color1 {
+    background-color: white;
+    opacity:0.9;
+    border-radius: 25px;
 }
