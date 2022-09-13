@@ -8,15 +8,11 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ParceiroComponent } from './parceiro/parceiro.component';
 import { HttpClientModule } from '@angular/common/http';
-<<<<<<< HEAD
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
-=======
 import { FormsModule } from '@angular/forms';
-import { InicioComponent } from './inicio/inicio.component';
->>>>>>> consumoApi
 
 @NgModule({
   declarations: [
@@ -26,14 +22,10 @@ import { InicioComponent } from './inicio/inicio.component';
     EntrarComponent,
     CadastrarComponent,
     ParceiroComponent,
-<<<<<<< HEAD
     InicioComponent,
     TemaComponent,
     TemaEditComponent,
     TemaDeleteComponent
-=======
-    InicioComponent
->>>>>>> consumoApi
   ],
   imports: [
     BrowserModule,
