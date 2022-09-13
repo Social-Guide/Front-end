@@ -9,6 +9,10 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { ParceiroComponent } from './parceiro/parceiro.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InicioComponent } from './inicio/inicio.component';
+import { TemaComponent } from './tema/tema.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { HttpClientModule } from '@angular/common/http';
     RodapeComponent,
     EntrarComponent,
     CadastrarComponent,
-    ParceiroComponent
+    ParceiroComponent,
+    InicioComponent,
+    TemaComponent,
+    TemaEditComponent,
+    TemaDeleteComponent
   ],
   imports: [
     BrowserModule,
