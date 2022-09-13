@@ -3,23 +3,25 @@
 
       <div class="col-md-12">
          <div class="row d-flex justify-content-center">
-            <div class="col-md-5 ">
+            <div class="col-md-5">
                <div class="mgb-5 color1 my-5 t-color">
 
                   <h1 class="text-center ">Entrar</h1>
                   <hr>
                   <div class="form-group ">
                      <label for="usuario">Usuário</label>
-                     <input class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
+                     <span class="fa fa-envelope"></span>
+                     <input [(ngModel)]="userLogin.usuario" class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
                   </div>
 
                   <div class="form-group">
                      <label for="senha">Senha</label>
-                     <input class="form-control" type="password" name="senha" id="senha" placeholder="Sua senha">
+                     <span class="fa fa-lock"></span>
+                     <input [(ngModel)]="userLogin.senha" class="form-control" type="password" name="senha" id="senha" (keyup.enter)="entrar()" placeholder="Sua senha">
                   </div>
-                  
+
                   <div class="d-flex justify-content-center">
-                     <button type="submit" class="btn btcolor text-light mt-3">Entrar</button>
+                     <button type="submit" class="btn btcolor text-light mt-3" (click)="entrar()">Entrar</button>
                   </div>
                   <hr class="mt-4 mb-4">
 
@@ -30,3 +32,4 @@
       </div>
    </div>
 </div>
+
