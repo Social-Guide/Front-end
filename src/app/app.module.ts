@@ -14,6 +14,8 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { FormsModule } from '@angular/forms';
 import { FeedComponent } from './feed/feed.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
+import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { FeedComponent } from './feed/feed.component';
     TemaComponent,
     TemaEditComponent,
     TemaDeleteComponent,
-    FeedComponent
+    FeedComponent,
+    PostagemEditComponent,
+    PostagemDeleteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,8 @@
 <button class="btn btn-dark" routerLink="/tema">Criar tema</button>
 
 <div class="container">
-  <div class="row col-md-4 my-5 d-flex justify-content-center">
+  <div class="row">
+  <div class="col-md-4 my-5 d-flex justify-content-center">
     <div class="div card d-flex align-content-center p-3 shadow">
       <img src="{{foto}}" alt="" class="img-fluid rounded-circle borda shadow" width="60%"
         onerror="this.src = '../../assets/img/user2.jpg'">
@@ -10,9 +11,6 @@
       </div>
       <div class="row d-flex justify-content-center">
         <h5 class="text-center font-weight-bold">{{nome}}</h5>
-      </div>
-      <div class="row d-flex justify-content-center">
-        <small class="text-muted">{{usuario}}</small>
       </div>
       <div class="row d-flex justify-content-center mt-3">
         <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" data-toggle="modal"
@@ -33,9 +31,6 @@
           <i class="fa fa-sliders" aria-hidden="true"></i> Cadastrar tema
         </button>
       </div>
-      <div class="col-md-8">
-
-      </div>
     </div>
 
     <!-- Modal Postagem -->
@@ -51,25 +46,27 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label for="titulo">Cadastrar Tema</label>
-              <input type="text" class="form-control" id="titulo" placeholder="Digite o tema">
+              <label for="titulo">Título</label>
+              <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo"
+                placeholder="Digite o título">
             </div>
             <div class="form-group">
               <label for="texto">Texto</label>
-              <textarea class="form-control" name="texto" id="texto" rows="3"></textarea>
+              <textarea [(ngModel)]='postagem.texto' class="form-control" name="texto" id="texto" rows="3"></textarea>
             </div>
 
             <div class="form-group">
               <label for="">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um
                   novo</a>:</label>
-              <select name="tema" id="tema" class="form-control">
-                <option></option>
+              <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                <option *ngFor='let item of listaTemas' value='{{item.id}}'>{{item.descricao}}</option>
               </select>
             </div>
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger mr-4" data-dismiss="modal">Publicar</button>
+            <button type="button" class="btn btn-danger mr-4" (click)="publicar()"
+              data-dismiss="modal">Publicar</button>
             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
           </div>
         </div>
@@ -90,11 +87,13 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <input [(ngModel)]='tema.descricao' type="text" class="form-control" id="titulo" placeholder="Digite o tema">
+              <input [(ngModel)]='tema.descricao' type="text" class="form-control" id="titulo"
+                placeholder="Digite o tema">
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-info mr-4" data-dismiss="modal" (click)="cadastrar()">Cadastrar</button>
+            <button type="button" class="btn btn-info mr-4" data-dismiss="modal"
+              (click)="cadastrar()">Cadastrar</button>
             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
           </div>
           <div class="container">
@@ -118,8 +117,10 @@
                       <th>{{item.id}}</th>
                       <td>{{item.descricao}}</td>
                       <td class="d-flex justify-content-end">
-                        <button class="btn btn-info" data-dismiss="modal" [routerLink]="['/tema-edit', item.id]">Editar</button>
-                        <button class="btn btn-outline-dark ml-3" data-dismiss="modal" [routerLink]="['/tema-delete', item.id]">Apagar</button>
+                        <button class="btn btn-info" data-dismiss="modal"
+                          [routerLink]="['/tema-edit', item.id]">Editar</button>
+                        <button class="btn btn-outline-dark ml-3" data-dismiss="modal"
+                          [routerLink]="['/tema-delete', item.id]">Apagar</button>
                       </td>
                     </tr>
                   </tbody>
@@ -130,3 +131,28 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="col-md-8">
+    <div class="col-md-11">
+    <div class="tab-content mt-5" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
+          aria-labelledby="nav-todasPostagens-tab">
+
+          <div class="card">
+              <div class="card text-left" *ngFor="let item of listaPostagem">
+                  <div class="card-body">
+                      <h5 class="card-title m-0">{{item.titulo}}</h5>
+                      <small class="text-muted mb-3">Tema: {{item.tema.descricao}}</small>
+                      <p class="card-text">{{item.texto}}</p>
+                      <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
+                              | date: 'HH:mm'}}</small></p>
+                      <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}
+                              {{item.usuario.sobrenome}}</small></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
