@@ -29,13 +29,9 @@ export class EntrarComponent implements OnInit {
       environment.sobrenome = this.userLogin.sobrenome
       environment.foto = this.userLogin.foto
       environment.id = this.userLogin.id
-      this.router.navigate(["/inicio"])
+      environment.usuario = this.userLogin.usuario
+      this.router.navigate(["/feed"])
       
-      console.log(environment.token)
-      console.log(environment.nome)
-      console.log(environment.foto)
-      console.log(environment.id)
-      console.log(environment.sobrenome)
     }, 
     erro => {
       if(erro.status == 401){

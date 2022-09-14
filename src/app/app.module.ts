@@ -13,6 +13,7 @@ import { TemaComponent } from './tema/tema.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { FormsModule } from '@angular/forms';
+import { FeedComponent } from './feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     InicioComponent,
     TemaComponent,
     TemaEditComponent,
-    TemaDeleteComponent
+    TemaDeleteComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
