@@ -20,6 +20,10 @@ html{
     font-size: 45pt;
 }
 
+.fs-30{
+    font-size: 30pt;
+}
+
 .btn-blue{
     background-color: rgb(124, 174, 218) !important;
 }

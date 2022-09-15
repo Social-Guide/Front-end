@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid bg-nav">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top color-nav">
         <div class="row">
-            <a class="navbar-brand text-white ml-5" href="#">Social Guide</a>
+            <a class="navbar-brand text-white ml-5 font-weight-bold" href="#topo" id="topo">Social Guide</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -10,26 +10,28 @@
 
         <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active text-white" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-link text-white" href="#">Features</a>
-                <a class="nav-link text-white" href="#">Pricing</a>
-                <a class="nav-link text-white" href="#">Disabled</a>
+
+                <a class="nav-link text-white nav-link nav-link-ltr" href="#ods">ODS</a>
+                <a class="nav-link text-white nav-link nav-link-ltr" href="#nossoProposito">Nosso propósito</a>
+                <a class="nav-link text-white nav-link nav-link-ltr" href="#parceiros">Parceiros</a>
+                <a class="nav-link text-white nav-link nav-link-ltr" href="#autoras">Autoras</a>
             </div>
         </div>
 
         <div class="row d-flex justify-content-end m-0 align-items-center">
-            <a class="mr-3 text-white" routerLink="/cadastrar">Cadastrar</a>
-            <button class="btn btn-outline-light mr-3" routerLink="/entrar">Entrar</button>
+            <a class="mr-3 text-white font-weight-bold" routerLink="/cadastrar">Cadastrar</a>
+            <button class="btn btn-outline-light mr-3 button-login font-weight-bold"
+                routerLink="/entrar">Entrar</button>
         </div>
     </nav>
 
     <div class="row bg-secondary d-flex justify-content-center navbar-paddin" id="img-bg-top">
 
-        <div class="col-md-12 text-white text-center">
+        <div class="col-md-12 text-white text-center layer">
 
             <div class="row d-flex justify-content-center">
                 <div class="col-md-12">
-                    <h1 class="fs-45 m-0">Bem vinde ao seu</h1>
+                    <h1 class="fs-45 m-0 mt-5">Bem vinde ao seu</h1>
                     <h1 class="fs-54 mb-4">Guia Social</h1>
                     <h5 class="fs-15 font-weight-light font-italic">Aqui você fica por dentro de dicas e conscientização
                     </h5>
@@ -38,11 +40,10 @@
                 </div>
             </div>
 
-            <div class="row d-flex justify-content-center mt-3 mb-5">
+            <div class="row d-flex justify-content-center mt-5 mb-5">
                 <div class="col-md-12">
-                    <button class="btn btn-light mr-2" data-toggle="modal" data-target="#novaPostagem">Nova
-                        Postagem</button>
-                    <a class="btn btn-outline-light" href="#postagens">Ver postagens</a>
+                    <button class="btn btn-light mr-2" routerLink="/cadastrar">Venha fazer parte da nossa
+                        comunidade!</button>
                 </div>
             </div>
         </div>
@@ -58,69 +59,73 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h3>ODS 6</h3>
-                <h6>Água potável e saneamento</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, unde. Numquam laboriosam odio debitis
-                    dolores! Assumenda vitae reiciendis est veritatis nihil et excepturi neque dolorem? Libero adipisci
-                    officia praesentium magnam.</p>
+        <div class="row d-flex align-items-center">
+            <div class="col-md-5">
+                <h3 class="fs-30 font-weight-bold">ODS 6</h3>
+                <h5 class="font-italic">Água potável e saneamento</h5>
+                <p class="mt-4">Garantir disponibilidade e manejo sustentável da água e saneamento para todos,
+                    especificamente aborda
+                    os desafios relacionados à universalização do acesso ao saneamento básico.</p>
             </div>
-            <div class="col-md-6">
-                <img src="" alt="ods 6">
+            <div class="col-md-7">
+                <img src="../../assets/img/img-inicio/img1.png" class="img-fluid max-width: 150% layerImg1" alt="ods 6">
             </div>
         </div>
     </div>
 
     <!-- Jumbotron -->
-    <div id="ods" class="jumbotron jumbotron-fluid bg-transparent">
+    <div id="nossoProposito" class="jumbotron jumbotron-fluid bg-transparent">
         <div class="container">
             <h1 class="display-4"></h1>
             <p class="lead"></p>
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="" alt="proposito">
+        <div class="row d-flex align-items-center">
+            <div class="col-md-7">
+                <img src="../../assets/img/img-inicio/img2.png" class="img-fluid max-width: 150% layerImg1"
+                    alt="proposito">
             </div>
-            <div class="col-md-6 ">
-                <h3 class="text-right">Nosso Propósito</h3>
-                <p class="text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, unde. Numquam
-                    laboriosam odio debitis dolores! Assumenda vitae reiciendis est veritatis nihil et excepturi neque
-                    dolorem? Libero adipisci officia praesentium magnam.</p>
+            <div class="col-md-5">
+                <h3 class="text-right fs-30 font-weight-bold">Nosso Propósito</h3>
+                <p class="text-right mt-4">Fazer uma rede social, onde as pessoas podem ver matérias sobre o assunto
+                    escolhido que foi: Desinformação sobre saneamento e impactos que causa, baseado na ODS 6. Assim,
+                    podendo compartilhar dicas para propagar o conhecimento e saber os perigos da falta de saneamento,
+                    além disto uma vertente para ONGs e apoiadores do projeto. </p>
             </div>
 
         </div>
     </div>
 
     <!-- Jumbotron -->
-    <div id="ods" class="jumbotron jumbotron-fluid bg-transparent">
+    <div id="parceiros" class="jumbotron jumbotron-fluid bg-transparent">
         <div class="container">
             <h1 class="display-4"></h1>
             <p class="lead"></p>
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <h3 class="text-center">Parceiros</h3>
-            <div class="col-md-11">                
-                <img src="" alt="parceiro1">
-                <img src="" alt="parceiro2">
-                <img src="" alt="parceiro3">
-                <img src="" alt="parceiro4">
-                <img src="" alt="parceiro5">
+        <div class="row d-flex justify-content-center">
+            <h3 class="text-center mb-5 fs-30 font-weight-bold">Parceiros</h3>
+            <div class="col-md-11 d-flex justify-content-center mb-5">
+                <img class="mr-5" src="" alt="parceiro1">
+                <img class="mr-5" src="" alt="parceiro2">
+                <img class="mr-5" src="" alt="parceiro3">
+                <img class="mr-5" src="" alt="parceiro4">
+                <img class="mr-5" src="" alt="parceiro5">
                 <img src="" alt="parceiro6">
-            </div>           
+            </div>
 
         </div>
         <!-- Jumbotron -->
-        <div id="ods" class="jumbotron jumbotron-fluid bg-transparent">
+        <div id="autoras" class="jumbotron jumbotron-fluid bg-transparent">
             <div class="container">
                 <h1 class="display-4"></h1>
                 <p class="lead"></p>
             </div>
         </div>
+
+        <h3 class="text-center mb-5 fs-30 font-weight-bold">Autoras do projeto</h3>
         <div class="card-deck">
             <div class="card shadow p-3 mb-5 bg-white rounded">
                 <img class="card-img-top" src="" alt="Imagem de capa do card">
@@ -162,7 +167,50 @@
                 </div>
             </div>
         </div>
+        <!-- Jumbotron -->
+        <div id="autoras" class="jumbotron jumbotron-fluid bg-transparent">
+            <div class="container">
+                <h1 class="display-4"></h1>
+                <p class="lead"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="page-footer font-small bg-secundary pt-4 bg-padrao1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <h4 class="t-padrao">Siga-nos nas redes sociais</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+
+                <ul class="social-network mt-2 mb-3">
+                    <li>
+                        <a href="https://www.facebook.com/generationbrasil" target="_blank" class="icoFacebook">
+                            <i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/generationbrasil/" target="_blank" class="icoInstagram">
+                            <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank" class="icoFacebook">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
     </div>
 
+    <div class="footer-copyright bg-padrao text-center py-3">
+        <span class="t-padrao">© 2022 Copyright: </span>
+        <a class="t-padrao" target="_blank" href="https://brasil.generation.org">brasil.generation.org</a>
+    </div>
 
-</div>
+</footer>
