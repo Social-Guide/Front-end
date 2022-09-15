@@ -2,6 +2,14 @@
     font-size: 14pt !important;
 }
 
+.color-nav{
+  background-color: #83c59f !important;
+}
+
+.corNavbar{
+  color: #2c4157 !important;
+}
+
 .bg-padrao{
     background-color: #5b6c7e;
 }
@@ -11,11 +19,11 @@
 }
 
 .out:hover{
-    color: #c8c2c2 !important;
+    color: #ffffff !important;
 }
 
 .fa:hover{
-    color: #c8c2c2 !important;
+    color: #ffffff !important;
 }
 
 a{

@@ -14,7 +14,7 @@ export class CadastrarComponent implements OnInit {
 
   confirmarSenha: string
   tipoUsuario: string
-  
+
   constructor(
     private authService: AuthService,
     private router: Router
@@ -32,14 +32,22 @@ export class CadastrarComponent implements OnInit {
     this.tipoUsuario = event.target.value
   }
 
-  cadastrar(){
-    if(this.user.senha != this.confirmarSenha){
-      alert("Senhas incorretas!")
+  cadastrar() {
+    let passwordRegex: RegExp = /(?=.*[#$%¨&*()!@}{,.^?~=+\-_\/*\-+.\|])(?=.*[a-zA-Z])(?=.*[0-9]).{8,}/mg;
+
+    this.user.tipo = this.tipoUsuario
+
+    if (this.user.senha == undefined || !passwordRegex.test(this.user.senha)) {
+      alert('A senha deve conter letra, número e caractere especial!')
+    } else if (this.user.senha != this.confirmarSenha) {
+      alert('As senhas estão incorretas!')
+    } else {
+      this.authService.cadastrar(this.user).subscribe((resp: User) => {
+        this.user = resp
+        this.router.navigate(['/entrar'])
+        alert('Usuário cadastrado com sucesso!')
+      })
     }
-    else this.authService.cadastrar(this.user).subscribe((resp: User) => {
-      this.user = resp
-      this.router.navigate(["/entrar"])
-      alert("Usuário cadastrado com sucesso!")
-    })
+
   }
 }
