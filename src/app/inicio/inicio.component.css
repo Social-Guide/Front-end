@@ -1,14 +1,85 @@
 .navbar-paddin{
     padding-top: 6%;
 }
+.logotipo{
+width: 60px;
+margin-right: 8px;
+margin-left: -28px;
+}
 
 #img-bg-top{
     background-image: url('../../assets/img/bd-inicio.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-x: right;    
+    background-position-x: right;
 }
 .color-nav{
     background-color: #83c59f;
 }
 
+.image-ods{
+  width: 500px;
+  height: 250px;
+}
+
+/* Transição com texto */
+
+.container-image {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 50%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  opacity: 0;
+  transition: .8s ease;
+  background-color: #83c59f;
+}
+
+.container-image:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: #203e5d;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/*Efeito scale*/
+.image-scale{
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.image-scale:hover{
+  -webkit-transform: scale(1.5);
+  transform: scale(1.2);
+}
+
+
+/*Efeito border-radius*/
+
+.image-border-radius{
+  transition: all .5s;
+  border: 10px solid transparent;
+}
+.image-border-radius:hover{
+  border: 2px solid #136497;
+}

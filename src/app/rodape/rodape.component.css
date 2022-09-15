@@ -1,5 +1,5 @@
 .bg-padrao{
-    background-color: #5b6c7e;
+    background-color: #ececec;
 }
 
 .bg-padrao1{
@@ -13,7 +13,7 @@
 .social-network li{
     display: inline;
     margin: 0;
-   
+
 }
 
 .social-network{
@@ -22,7 +22,7 @@
     background-color: aliceblue;
     border-radius: 25px;
     width: 220px;
-    height: 80px; 
+    height: 80px;
 }
 
 .fa{
@@ -49,4 +49,8 @@
 
 .fa-facebook:hover {
     color: #3b5998;
+}
+
+.corFooterCopy{
+  color: #23405B !important;
 }
