@@ -49,6 +49,7 @@ export class FeedComponent implements OnInit {
     this.findAllTemas()
     this.getAllTemas()
     this.getAllPostagens()
+
   }
 
   findAllTemas() {

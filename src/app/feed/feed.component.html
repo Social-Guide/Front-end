@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="container">
     <div class="row">
-      <div class="col-md-3 my-5 d-flex justify-content-center size-card">
+      <div class="col-md-3 mb-5 d-flex justify-content-center size-card">
         <div class="div card d-flex align-content-center p-3 shadow fixed-left">
           <img src="{{foto}}" alt="" class="img-fluid rounded-circle borda shadow" width="60%"
             onerror="this.src = '../../assets/img/user2.jpg'">
@@ -14,14 +14,11 @@
               data-target="#novaPostagem">
               <i class="fa fa-plus-square-o" aria-hidden="true"></i> Nova postagem
             </button>
-            <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" routerLink="/tema">
-              <i class="fa fa-plus-square-o" aria-hidden="true"></i> Minhas postagens
+            <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" [routerLink]="['/user-edit', id]">
+              <i class="fa fa-plus-square-o" aria-hidden="true"></i> Editar perfil
             </button>
-            <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" routerLink="">
-              <i class="fa fa-plus-square-o" aria-hidden="true"></i> Meu perfil
-            </button>
-            <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" routerLink=''>
-              <i class="fa fa-sliders" aria-hidden="true"></i> Editar perfil
+            <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" routerLink="/configuracao">
+              <i class="fa fa-sliders" aria-hidden="true"></i> Configuração
             </button>
             <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" data-toggle="modal"
               data-target="#novoTema">
@@ -134,6 +131,8 @@
             </div>
           </div>
         </div>
+
+        
       </div>
       <div class="col-md-9">
         <div class="col-md-10">
@@ -158,8 +157,8 @@
                     <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
                         | date: 'HH:mm'}}</small></p>
 
-                    <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}
-                        {{item.usuario.sobrenome}}</small></p>
+                    <!-- <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}
+                        {{item.usuario.sobrenome}}</small></p> -->
                   </div>
                 </div>
               </div>

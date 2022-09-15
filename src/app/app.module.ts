@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { FeedComponent } from './feed/feed.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     TemaDeleteComponent,
     FeedComponent,
     PostagemEditComponent,
-    PostagemDeleteComponent
+    PostagemDeleteComponent,
+    UserEditComponent,
+    ConfiguracaoComponent
   ],
   imports: [
     BrowserModule,

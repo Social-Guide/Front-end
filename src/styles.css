@@ -15,3 +15,16 @@ html{
 .btn-blue{
     background-color: rgb(124, 174, 218) !important;
 }
+
+.borda{
+    border: 3px solid rgb(75, 108, 184);
+    margin: auto;
+}
+
+.size-card{
+    height: 530px;
+}
+
+.navbar-paddin{
+    padding-top: 6%;
+}

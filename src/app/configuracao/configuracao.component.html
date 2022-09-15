@@ -1,0 +1,46 @@
+<div class="container-fluid navbar-paddin">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mb-5 d-flex justify-content-center size-card">
+                <div class="div card d-flex align-content-center p-3 shadow fixed-left">
+                    <img src="{{foto}}" alt="" class="img-fluid rounded-circle borda shadow" width="60%"
+                        onerror="this.src = '../../assets/img/user2.jpg'">
+                    <div class="row d-flex justify-content-center">
+                        <h5 class="text-center font-weight-bold">{{nome}}</h5>
+                    </div>
+                    <div class="row d-flex justify-content-center mt-3">
+                        <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" data-toggle="modal"
+                            data-target="#novaPostagem">
+                            <i class="fa fa-plus-square-o" aria-hidden="true"></i> Nova postagem
+                        </button>
+                        <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" routerLink="">
+                            <i class="fa fa-plus-square-o" aria-hidden="true"></i> Meu perfil
+                        </button>
+                        <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" data-toggle="modal"
+                            data-target="#atualizarUser" [routerLink]="['/user-edit', id]">
+                            <i class="fa fa-sliders" aria-hidden="true"></i> Editar perfil
+                        </button>
+                        <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" data-toggle="modal"
+                            data-target="#novoTema">
+                            <i class="fa fa-sliders" aria-hidden="true"></i> Cadastrar tema
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="col-md-10">
+                    <div>
+                        <button class="btn btn-info mb-4" [routerLink]="['/config/nome', id]">Editar Nome</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-info mb-4" [routerLink]="['/config/senha', id]">Editar Senha</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-info mb-4" [routerLink]="['/config/foto', id]">Editar Foto</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
