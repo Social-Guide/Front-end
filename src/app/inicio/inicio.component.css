@@ -1,0 +1,14 @@
+.navbar-paddin{
+    padding-top: 6%;
+}
+
+#img-bg-top{
+    background-image: url('../../assets/img/bd-inicio.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: right;    
+}
+.color-nav{
+    background-color: #83c59f;
+}
+

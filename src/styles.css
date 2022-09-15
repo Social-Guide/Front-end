@@ -12,6 +12,14 @@ html{
     font-size: 18pt;
 }
 
+.fs-15{
+    font-size: 15pt;
+}
+
+.fs-45{
+    font-size: 45pt;
+}
+
 .btn-blue{
     background-color: rgb(124, 174, 218) !important;
 }
