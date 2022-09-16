@@ -6,15 +6,19 @@
 
     <div class="row">
 
-      <div class="col-md-3 mb-5 d-flex justify-content-center size-card">
-
-        <div class="div card d-flex align-content-center p-3 shadow fixed-left">
-          <img src="{{foto}}" alt="" class="img-fluid rounded-circle borda shadow" width="60%"
-            onerror="this.src = '../../assets/img/user2.jpg'">
+      <div class="col-md-3">
+        <div class="div card d-flex align-content-center mt-5 p-3 shadow">
+          <div class="row d-flex justify-content-center mb-3">
+            <img src="{{foto}}" alt="" class="img-fluid rounded-circle borda shadow" width="60%"
+              onerror="this.src = '../../assets/img/user2.jpg'">
+          </div>
           <div class="row d-flex justify-content-center">
             <h5 class="text-center font-weight-bold">{{nome}}</h5>
           </div>
           <div class="row d-flex justify-content-center mt-3">
+            <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" [routerLink]="['/meu-perfil', id]">
+              <i class="fa fa-plus-square-o" aria-hidden="true"></i> Meu perfil
+            </button>
             <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 px-3" data-toggle="modal"
               data-target="#novaPostagem">
               <i class="fa fa-plus-square-o" aria-hidden="true"></i> Nova postagem
@@ -31,6 +35,7 @@
             </button>
           </div>
         </div>
+
 
         <!-- Modal Postagem -->
         <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
@@ -136,38 +141,33 @@
             </div>
           </div>
         </div>
-
-
       </div>
+
+
       <div class="col-md-9">
-        <div class="col-md-10">
-          <div class="tab-content mt-5" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
-              aria-labelledby="nav-todasPostagens-tab">
+        <div class="card mt-5 pt-2 pb-2 mb-4 shadow" *ngFor='let item of listaPostagem'>
 
-              <div class="card">
-                <div class="card text-left" *ngFor="let item of listaPostagem">
-                  <div class="card-body">
-
-                    <ng-container *ngIf="item.foto != null">
-                      <img [src]=item.foto alt="" width="100%" class="img-fluid">
-                    </ng-container>
-
-                    <h5 class="card-title m-0">{{item.titulo}}</h5>
-
-                    <small class="text-muted mb-3">Tema: {{item.tema.descricao}}</small>
-
-                    <p class="card-text">{{item.texto}}</p>
-
-                    <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
-                        | date: 'HH:mm'}}</small></p>
-
-                    <!-- <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}
-                        {{item.usuario.sobrenome}}</small></p> -->
-                  </div>
-                </div>
+          <div class="row d-flex align-items-center">
+            <div class="col mt-3">
+              <div class="d-flex justify-content-start">
+                <img [src]=item.usuario.foto class="rounded-circle ml-4" width="40px" height="40px"
+                  onerror="this.src = '../../assets/img/user2.jpg'">
+                <p class="mt-2 ml-2">{{item.usuario.nome}} {{item.usuario.sobrenome}}</p>
               </div>
             </div>
+
+              <div class="d-flex justify-content-end mt-3">
+                <p class="text-right"><i class="fa fa-clock-o mr-1" aria-hidden="true"></i>
+                  {{item.data | date: 'dd/MM/yyyy'}}</p>
+                <p class="text-right ml-4 mr-5">Tema: {{item.tema.descricao}}</p>
+              </div>
+
+          </div>
+          <hr class="mr-0 ml-0">
+          <h5 class="card-title ml-4 mb-3">{{item.titulo}}</h5>
+          <div class="d-flex justify-content-center">
+            <img [src]=item.foto width="100%" class="img-fluid" onerror="this.src = '../../assets/img/semfoto.jpg'">
+            <p class="card-text mt-3 pb-4">{{item.texto}}</p>
           </div>
         </div>
       </div>

@@ -18,6 +18,7 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { ConfiguracaoComponent } from './configuracao/configuracao.component';
+import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ConfiguracaoComponent } from './configuracao/configuracao.component';
     PostagemEditComponent,
     PostagemDeleteComponent,
     UserEditComponent,
-    ConfiguracaoComponent
+    ConfiguracaoComponent,
+    MeuPerfilComponent
   ],
   imports: [
     BrowserModule,
