@@ -74,7 +74,7 @@ html{
   body {
     background: var(--bkg-color) !important;
   }
-  a, p {
+  a, p, label {
     color: var(--text-color);
   }
   button {

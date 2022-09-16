@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { TemaService } from '../service/tema.service';
 import { Tema } from '../model/Tema';
@@ -36,7 +36,8 @@ export class FeedComponent implements OnInit {
     private router: Router,
     private temaService: TemaService,
     private postagemService: PostagemService,
-    private authService: AuthService
+    private authService: AuthService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -49,6 +50,7 @@ export class FeedComponent implements OnInit {
     this.findAllTemas()
     this.getAllTemas()
     this.getAllPostagens()
+    this.idTema = this.route.snapshot.params['id']
 
   }
 
@@ -81,9 +83,18 @@ export class FeedComponent implements OnInit {
     })
   }
 
-  findByIdTema(){
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) =>{
+  
+
+  findByIdTema(id:number){
+    this.temaService.getByIdTema(id).subscribe((resp: Tema) =>{
       this.tema = resp
+    })
+  }
+
+  apagar (){
+    this.temaService.deleteTema(this.tema.id).subscribe(()=>{
+      alert('Tema apagado com sucesso')
+      this.getAllTemas()
     })
   }
 

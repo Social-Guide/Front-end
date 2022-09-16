@@ -37,7 +37,6 @@
                                     <p class="text-right ml-4 mr-5"><i class="fa fa-bookmark-o" aria-hidden="true"></i>
                                         Tema: {{item.tema.descricao}}</p>
                                 </div>
-
                             </div>
                             <hr class="mr-0 ml-0">
                             <p class="card-title m-0 mb-3 fs-25">{{item.titulo}}</p>
@@ -46,7 +45,7 @@
                             <p class="card-text mt-3 pb-4">{{item.texto}}</p>
 
                             <a [routerLink]="['/postagem-edit', item.id]" class="btn btn-info mr-3">Editar</a>
-                            <a [routerLink]="['/postagem-delete', item.id]" class="btn btn-outline-light">Apagar</a>
+                            <a [routerLink]="['/postagem-delete', item.id]" class="btn btn-dark">Apagar</a>
                         </div>
                     </div>
                 </div>
@@ -56,6 +55,7 @@
                 <div class="card-columns bg-transparent" *ngFor="let tema of listaTemas">
                     <div class="card text-center" *ngFor="let item of tema.postagem">
                         <div class="card-body">
+                            <p>AAAAAAAAAAAAAAAAAAAAA</p>
                             <h5 class="card-title m-0">{{item.titulo}}</h5>
                             <p class="card-text">{{item.texto}}</p>
                             <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
