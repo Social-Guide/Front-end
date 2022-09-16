@@ -1,9 +1,13 @@
 #img-bg {
+  background: linear-gradient(white, rgba(42, 163, 165, 0.3));
+
+  /*
     background-image: url('../../assets/img/Água1.jpg');
     min-height: 965px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    */
 }
 
 .mgb-5{
@@ -32,6 +36,13 @@ span{
     align-items: center;
     color: rgba(42, 56, 165, 0.579);
 }
+
 .form-group .form-control {
     padding-left: 2.375rem;
+}
+
+.img-entrar{
+  max-height: 100%;
+  max-height: 100%;
+
 }
