@@ -7,7 +7,7 @@
 }
 
 .t-padrao{
-    color: aliceblue;
+    color: #ECECEC;
 }
 
 .social-network li{
@@ -54,3 +54,14 @@
 .corFooterCopy{
   color: #23405B !important;
 }
+
+.text-cg-500{
+    color: var(--cg-500)!important;
+  }
+
+  .fs-10{
+    font-size: 10pt;
+}
+.bb-cg-200{
+    border-bottom: 1px solid var(--cg-200);
+  }
