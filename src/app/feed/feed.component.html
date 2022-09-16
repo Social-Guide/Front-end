@@ -1,8 +1,7 @@
 <button class="btn btn-dark" routerLink="/tema">Criar tema</button>
 
-<div class="container-fluid">
+<div class="container">
 
-  <div class="container">
 
     <div class="row">
 
@@ -144,7 +143,7 @@
       </div>
 
 
-      <div class="col-md-9">
+      <div class="col-md-6">
         <div class="card mt-5 pt-2 pb-2 mb-4 shadow" *ngFor='let item of listaPostagem'>
 
           <div class="row d-flex align-items-center">
@@ -156,11 +155,12 @@
               </div>
             </div>
 
-              <div class="d-flex justify-content-end mt-3">
-                <p class="text-right"><i class="fa fa-clock-o mr-1" aria-hidden="true"></i>
-                  {{item.data | date: 'dd/MM/yyyy'}}</p>
-                <p class="text-right ml-4 mr-5">Tema: {{item.tema.descricao}}</p>
-              </div>
+            <div class="d-flex justify-content-end mt-3">
+              <p class="text-right"><i class="fa fa-calendar" aria-hidden="true"></i>
+                {{item.data | date: 'dd/MM/yyyy'}}</p>
+              <p class="text-right ml-4 mr-5"><i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                Tema: {{item.tema.descricao}}</p>
+            </div>
 
           </div>
           <hr class="mr-0 ml-0">
@@ -171,6 +171,13 @@
           </div>
         </div>
       </div>
+      <div class="col-md-3">
+        <div class="card my-5 p-3 shadow fixed-left">
+          <div class="row">
+          <div class="col-md-12">
+              <div class="elfsight-app-19824f8c-b788-4ed8-8074-905538a62fc6"></div>
+          </div>
+      </div>
+      </div>
     </div>
   </div>
-</div>

@@ -1,25 +1,24 @@
 <div class="container navbar-paddin">
     <div class="row d-flex justify-content-center">
         <div class="col-md-9 card my-5 p-3 shadow fixed-left">
-            <img src="{{user.foto}}" alt="" class="img-fluid rounded-circle borda shadow" width="60%"
-                onerror="this.src = '../../assets/img/user2.jpg'">
-            <div class="row d-flex justify-content-center">
-                <h5 class="text-center font-weight-bold">{{user.nome}} {{user.sobrenome}}</h5>
+            <div class="row d-flex align-items-center">
+                <img src="{{user.foto}}" alt="" class="img-fluid rounded-circle shadow ml-5" width="100px"
+                    height="100px" onerror="this.src = '../../assets/img/user2.jpg'">
+                <h5 class="text-center font-weight-bold ml-5">{{user.nome}} {{user.sobrenome}}</h5>
             </div>
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="col-md-9">
-        <div class="row card mt-5 pt-2 pb-2 mb-4" *ngFor='let item of user.postagens'>
+<div class="container d-flex justify-content-center">
+    <div class="col-md-8">
+        <div class="row card mt-5 pt-2 pb-2 mb-4 shadow" *ngFor='let item of user.postagens'>
             <div class="col-md-12">
                 <div class="d-flex flex-column flex-md-row">
                     <div class="d-flex justify-content-end">
-                        <p class="text-cg-500 mt-3"><i class="fa fa-clock-o  mr-1 text-verde" aria-hidden="true"></i>
+                        <p class="text-right"><i class="fa fa-calendar" aria-hidden="true"></i>
                             {{item.data | date: 'dd/MM/yyyy'}}</p>
-                        <p class="text-cg-500 mt-3"><i class="fa fa-map-marker ml-3 mr-1 text-verde"
-                                aria-hidden="true"></i>
-                            {{item.tema.descricao}}</p>
+                        <p class="text-right ml-4 mr-5"><i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                            Tema: {{item.tema.descricao}}</p>
                     </div>
 
                 </div>
@@ -28,9 +27,18 @@
                 <img [src]=item.foto width="100%" class="img-fluid" onerror="this.src = '../../assets/img/semfoto.jpg'">
                 <p class="card-text mt-3 pb-4">{{item.texto}}</p>
 
-                <a [routerLink]="['/postagem-edit', item.id]" class="btn btn-danger mr-3">Editar</a>
+                <a [routerLink]="['/postagem-edit', item.id]" class="btn btn-info mr-3">Editar</a>
                 <a [routerLink]="['/postagem-delete', item.id]" class="btn btn-outline-dark">Apagar</a>
             </div>
         </div>
     </div>
+    <div class="d-flex justify-content-center">
+        <div class="card my-5 ml-4 p-3 shadow fixed-left">
+            <div class="row">
+            <div class="col-md-12">
+                <div class="elfsight-app-19824f8c-b788-4ed8-8074-905538a62fc6"></div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
