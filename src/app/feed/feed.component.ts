@@ -90,6 +90,7 @@ export class FeedComponent implements OnInit {
   getAllPostagens(){
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) =>{
       this.listaPostagem = resp
+      console.log(resp)
     })
   }
 

@@ -16,10 +16,6 @@ margin-left: -28px;
     background-position: center;
 }
 
-.color-nav {
-    background-color: #288593;
-}
-
 a{
     text-decoration: none;
 }
@@ -49,7 +45,7 @@ a{
   }
 
 .layer {
-    background-color: rgba(0, 0, 0, 0.519);
+    background-color: rgba(0, 0, 0, 0.224);
     width: 100%;
     height: 100%;
 }

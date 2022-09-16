@@ -1,4 +1,4 @@
-<div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5 navbar-paddin">
 
   <div class="row">
 
@@ -30,7 +30,7 @@
 
       <div class="d-flex justify-content-center">
         <button class="btn btn-danger mr-4" (click)="atualizar()">Atualizar</button>
-        <button class="btn btn-outline-dark" routerLink="/feed">Cancelar</button>
+        <button class="btn btn-outline-secondary" [routerLink]="['/meu-perfil', id]">Cancelar</button>
       </div>
 
     </div>

@@ -29,4 +29,9 @@ export class MenuComponent implements OnInit {
     environment.foto = ''
     environment.id = 0
   }
+
+  toggleDarkTheme(){
+    document.body.classList.toggle('dark-theme')
+    document.body.classList.toggle('bg-secundary')
+  }
 }

@@ -24,8 +24,12 @@ html{
     font-size: 30pt;
 }
 
+.fs-25{
+    font-size: 25px;
+}
+
 .btn-blue{
-    background-color: rgb(124, 174, 218) !important;
+    background-color: #288593 !important;
 }
 
 .borda{
@@ -40,3 +44,43 @@ html{
 .navbar-paddin {
     padding-top: 80px;
 }
+
+.color-nav {
+    background-color: #288593 !important;
+}
+
+/* ----------------------------------------- Dark Theme */
+
+/* .dark-theme {
+    --text-color: #eee;
+    --bkg-color: #252222;
+    --btn-txt-color: rgb(46, 43, 43);
+    --btn-bg-color: rgb(20, 211, 195);
+  } */
+
+  body {
+    --text-color: #222;
+    --bkg-color: #fff;
+    --btn-txt-color: white;
+    --btn-bg-color: rgb(11, 88, 160);
+  }
+  body.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #252222 !important;
+    --btn-txt-color: rgb(46, 43, 43) !important;
+    --btn-bg-color: rgb(20, 211, 195);
+  }
+  
+  body {
+    background: var(--bkg-color) !important;
+  }
+  a, p {
+    color: var(--text-color);
+  }
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    color: var(--btn-txt-color);
+    background-color: var(--btn-bg-color);
+  }
