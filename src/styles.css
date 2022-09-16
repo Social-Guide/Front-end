@@ -20,6 +20,10 @@ html{
     font-size: 45pt;
 }
 
+.fs-25{
+    font-size: 25pt;
+}
+
 .fs-30{
     font-size: 30pt;
 }
@@ -40,3 +44,13 @@ html{
 .navbar-paddin {
     padding-top: 80px;
 }
+
+.bg-cg-100{
+    background-color: var(--cg-100);
+  }
+
+  .py-50{
+    padding: 7rem 0;
+  }
+
+  
