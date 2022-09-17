@@ -7,12 +7,12 @@
   background: linear-gradient(white, rgba(42, 163, 165, 0.3));
 
   /*
-    background-image: url('../../assets/img/Água1.jpg');
+    background-image: url('../../assets/img/Água1.jpg');*/
     min-height: 965px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    */
+    
 }
 
 .mgb-5 {

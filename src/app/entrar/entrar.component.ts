@@ -31,7 +31,6 @@ export class EntrarComponent implements OnInit {
       environment.id = this.userLogin.id
       environment.usuario = this.userLogin.usuario
       this.router.navigate(["/feed"])
-      
     }, 
     erro => {
       if(erro.status == 401){

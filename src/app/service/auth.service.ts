@@ -26,6 +26,7 @@ export class AuthService {
     var token = {
       headers: new HttpHeaders().set('Authorization', environment.token)
     }
+    user.postagens = []
     return this.http.put<User>('http://localhost:8080/usuarios/atualizar', user, token)
   }
 
