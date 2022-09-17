@@ -15,6 +15,9 @@ import { User } from '../model/User';
 })
 export class FeedComponent implements OnInit {
 
+  key = 'data'
+  reverse = true
+
   nome = environment.nome
   sobrenome = environment.sobrenome
   foto = environment.foto
@@ -101,7 +104,6 @@ export class FeedComponent implements OnInit {
   getAllPostagens(){
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) =>{
       this.listaPostagem = resp
-      console.log(resp)
     })
   }
 
@@ -110,6 +112,15 @@ export class FeedComponent implements OnInit {
       this.user = resp
     })
   }
+
+  atualizar() {
+    this.temaService.putTema(this.tema).subscribe((resp: Tema)=> {
+     this.tema = resp
+     alert('Tema atualizado com sucesso')
+     this.getAllTemas()
+    })
+   
+   }
 
   publicar(){
     this.tema.id = this.idTema
@@ -127,4 +138,8 @@ export class FeedComponent implements OnInit {
       this.getAllPostagens()
     })
   }
-}
+
+  clearTema(){
+    this.tema = new Tema()
+  }
+
