@@ -42,5 +42,4 @@ export class MeuPerfilComponent implements OnInit {
       this.user = resp
     })
   }
-
 }

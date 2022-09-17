@@ -1,44 +1,83 @@
 <div class="container navbar-paddin">
     <div class="row d-flex justify-content-center">
-        <div class="col-md-9 card my-5 p-3 shadow fixed-left">
+        <div class="col-md-9 card my-5 p-3 shadow fixed-left bg-transparent">
             <div class="row d-flex align-items-center">
                 <img src="{{user.foto}}" alt="" class="img-fluid rounded-circle shadow ml-5" width="100px"
                     height="100px" onerror="this.src = '../../assets/img/user2.jpg'">
-                <h5 class="text-center font-weight-bold ml-5">{{user.nome}} {{user.sobrenome}}</h5>
+                <p class="text-center font-weight-bold ml-5">{{user.nome}} {{user.sobrenome}}</p>
             </div>
         </div>
     </div>
 </div>
-<div class="container d-flex justify-content-center">
-    <div class="col-md-8">
-        <div class="row card mt-5 pt-2 pb-2 mb-4 shadow" *ngFor='let item of user.postagens'>
-            <div class="col-md-12">
-                <div class="d-flex flex-column flex-md-row">
-                    <div class="d-flex justify-content-end">
-                        <p class="text-right"><i class="fa fa-calendar" aria-hidden="true"></i>
-                            {{item.data | date: 'dd/MM/yyyy'}}</p>
-                        <p class="text-right ml-4 mr-5"><i class="fa fa-bookmark-o" aria-hidden="true"></i>
-                            Tema: {{item.tema.descricao}}</p>
-                    </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <nav>
+                <div class="nav nav-tabs d-flex justify-content-center bg-transparent" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active text-secondary font-weight-bold bg-transparent" id="nav-minhasPostagens-tab"
+                        data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"
+                        aria-selected="true">Minhas Postagens</a>
+
+                        <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab"
+                href="#postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por
+                tema</a>
                 </div>
-                <hr class="mr-0 ml-0">
-                <h5 class="card-title m-0 mb-3">{{item.titulo}}</h5>
-                <img [src]=item.foto width="100%" class="img-fluid" onerror="this.src = '../../assets/img/semfoto.jpg'">
-                <p class="card-text mt-3 pb-4">{{item.texto}}</p>
+            </nav>
 
-                <a [routerLink]="['/postagem-edit', item.id]" class="btn btn-info mr-3">Editar</a>
-                <a [routerLink]="['/postagem-delete', item.id]" class="btn btn-outline-dark">Apagar</a>
+            <div class="tab-content mt-5 bg-transparent" id="postagens">
+                <div class="tab-pane fade show active" id="minhasPostagens" role="tabpanel"
+                    aria-labelledby="nav-minhasPostagens-tab">
+                    <div class="row card mt-5 pt-2 pb-2 mb-4 shadow bg-transparent" *ngFor='let item of user.postagens'>
+                        <div class="col-md-12">
+                            <div class="d-flex flex-column flex-md-row">
+                                <div class="d-flex justify-content-end">
+                                    <p class="text-right"><i class="fa fa-calendar" aria-hidden="true"></i>
+                                        {{item.data | date: 'dd/MM/yyyy'}}</p>
+                                    <p class="text-right ml-4 mr-5"><i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                                        Tema: {{item.tema.descricao}}</p>
+                                </div>
+                            </div>
+                            <hr class="mr-0 ml-0">
+                            <p class="card-title m-0 mb-3 fs-25">{{item.titulo}}</p>
+                            <img [src]=item.foto width="100%" class="img-fluid"
+                                onerror="this.src = '../../assets/img/semfoto.jpg'">
+                            <p class="card-text mt-3 pb-4">{{item.texto}}</p>
+
+                            <a [routerLink]="['/postagem-edit', item.id]" class="btn btn-info mr-3">Editar</a>
+                            <a [routerLink]="['/postagem-delete', item.id]" class="btn btn-dark">Apagar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade show active" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
+                <div class="card-columns bg-transparent" *ngFor="let tema of listaTemas">
+                    <div class="card text-center" *ngFor="let item of tema.postagem">
+                        <div class="card-body">
+                            <p>AAAAAAAAAAAAAAAAAAAAA</p>
+                            <h5 class="card-title m-0">{{item.titulo}}</h5>
+                            <p class="card-text">{{item.texto}}</p>
+                            <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
+                                    | date: 'HH:mm'}}</small></p>
+                            <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}
+                                    {{item.usuario.sobrenome}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="d-flex justify-content-center">
+                <div class="card my-5 ml-4 p-3 shadow fixed-left bg-transparent">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="elfsight-app-19824f8c-b788-4ed8-8074-905538a62fc6"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center">
-        <div class="card my-5 ml-4 p-3 shadow fixed-left">
-            <div class="row">
-            <div class="col-md-12">
-                <div class="elfsight-app-19824f8c-b788-4ed8-8074-905538a62fc6"></div>
-            </div>
-        </div>
-    </div>
-</div>
 </div>
