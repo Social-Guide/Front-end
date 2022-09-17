@@ -1,3 +1,8 @@
+*{
+
+}
+
+
 #img-bg {
   background: linear-gradient(white, rgba(42, 163, 165, 0.3));
 
@@ -10,39 +15,60 @@
     */
 }
 
-.mgb-5{
-    align-items: center;
-    padding: 60px;
+.mgb-5 {
+  align-items: center;
+  padding: 60px;
 }
+
 .color1 {
-    background-color: white;
-    opacity:0.9;
-    border-radius: 25px;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 25px;
 }
 
-.t-color{
-    color: #345574;
+.t-color {
+  color: #345574;
 }
 
-.btcolor{
-    background-color: #345574;
+.btcolor {
+  background-color: #345574;
 }
 
-span{
-    position: absolute;
-    margin-left: 16px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    color: rgba(42, 56, 165, 0.579);
+span {
+  position: absolute;
+  margin-left: 16px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  color: rgba(42, 56, 165, 0.579);
 }
 
 .form-group .form-control {
-    padding-left: 2.375rem;
+  padding-left: 2.375rem;
 }
 
-.img-entrar{
-  max-height: 100%;
-  max-height: 100%;
+.botao {
+  color: #FFFF;
+  font-size: 14px;
+}
 
+.botao:hover {
+  background-color: #dff1f1;
+  color: #345574;
+  transform: scale(1.1);
+  transition: all 0.5s;
+
+}
+
+.botao-entrar{
+  font-size: 40px;
+}
+
+.cor{
+  color: #345574;
+}
+
+.img-entrar {
+  max-height: 100%;
+  max-height: 100%;
 }
