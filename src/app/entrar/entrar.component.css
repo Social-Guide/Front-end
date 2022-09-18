@@ -1,18 +1,5 @@
-*{
-
-}
-
-
-#img-bg {
-  background: linear-gradient(white, rgba(42, 163, 165, 0.3));
-
-  /*
-    background-image: url('../../assets/img/Água1.jpg');*/
-    min-height: 965px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+#gradiente-bg {
+  background: linear-gradient(white, rgba(42, 163, 165, 0.3));   
 }
 
 .mgb-5 {
@@ -30,8 +17,10 @@
   color: #345574;
 }
 
-.btcolor {
+.bt-style {
   background-color: #345574;
+  color: #FFFF;
+  font-size: 14px;
 }
 
 span {
@@ -47,11 +36,6 @@ span {
   padding-left: 2.375rem;
 }
 
-.botao {
-  color: #FFFF;
-  font-size: 14px;
-}
-
 .botao:hover {
   background-color: #dff1f1;
   color: #345574;
@@ -60,15 +44,14 @@ span {
 
 }
 
-.botao-entrar{
-  font-size: 40px;
-}
-
-.cor{
+.cor-text{
   color: #345574;
 }
 
-.img-entrar {
-  max-height: 100%;
-  max-height: 100%;
+#img-bg{
+  background-image: url('../../assets/img/img-entrar/entrar-bg.png');
+  min-height: 965px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:contain;
 }
