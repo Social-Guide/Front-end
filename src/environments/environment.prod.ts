@@ -6,5 +6,5 @@ export const environment = {
   id: 0,
   foto: '',
   usuario: '',
-  url:''
+  url:'https://socialguide.herokuapp.com'
 };
