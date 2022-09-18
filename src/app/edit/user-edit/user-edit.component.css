@@ -1,3 +1,60 @@
+@import url('https://fonts.googleapis.com/css2? family= Poppins:wght@300;400;500 & display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.font{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+/*
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;}*/
+
+
+
+.w-50 {
+width: 50%;
+float: left;
+padding-right: 15px;
+
+}
+
+
+
+.form-box {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(40px);
+    padding: 50px 30px;
+    width: 60%;
+    height: 50%;
+    border-radius: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 200px;
+    
+  
+    
+ 
+}
+
+.input{
+
+
+ background-color: rgba(255, 255, 255, 0.941);
+ border-radius: 10px;
+ 
+ 
+ color: #616161;
+
+}
+
+
+
 span{
     position: absolute;
     margin-left: 16px;
@@ -6,6 +63,28 @@ span{
     align-items: center;
     color: rgba(42, 56, 165, 0.579);
 }
-.form-group .form-control {
+/*.form-group .form-control {
     padding-left: 2.375rem;
+} */
+
+.gradient {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+width: 100vw;
+background: linear-gradient(45deg, #293462, #83c59f, #1CD6CE, #293462);
+background-size: 300% 300%;
+ animation: colors 15s forwards infinite;
+}
+@keyframes colors {
+    0%{
+   background-position: 0% 50%;
+    }
+    50%{
+  background-position: 100% 50%;
+    }
+    100%{
+   background-position:  0% 50%;
+    }
 }
