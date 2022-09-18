@@ -1,4 +1,15 @@
-.borda{
-    border: 3px solid rgb(0, 0, 0);
-    margin: auto;
+.fa{
+    font-size: 14pt;
+}
+
+.t-azul{
+    color: #23405B;
+}
+
+.btn-azulclaro{
+    background-color: #7CB1E2;
+}
+
+element.style {
+    z-index: 0 !important;
 }

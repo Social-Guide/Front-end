@@ -4,6 +4,10 @@ html{
     scroll-behavior: smooth;
 }
 
+.fs-14{
+  font-size: 14pt;
+}
+
 .fs-54{
     font-size: 54pt;
 }
@@ -33,11 +37,11 @@ html{
 }
 
 .btn-blue{
-    background-color: #288593 !important;
+    background-color: #23405B !important;
 }
 
 .borda{
-    border: 3px solid rgb(75, 108, 184);
+    border: 3px solid #23405B;
     margin: auto;
 }
 
@@ -68,6 +72,11 @@ html{
 .t-padrao{
     color: #ECECEC;
 }
+
+.t-padrao1{
+  color: #23405B;
+}
+
   .corFooterCopy{
   color: #23405B !important;
 }
@@ -83,7 +92,7 @@ html{
     border-bottom: 1px solid var(--cg-200);
   }
 .color-nav {
-    background-color: #288593 !important;
+    background-color: #98E3AD !important;
 }
 
 /* ----------------------------------------- Dark Theme */
