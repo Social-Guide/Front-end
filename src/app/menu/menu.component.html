@@ -25,11 +25,16 @@
 
     <ul class="navbar-nav ml-auto d-flex align-items-center">
       <li>
-        <button (click)="toggleDarkTheme()" class="btn"><i class="fa fa-moon-o" aria-hidden="true"></i>
-        </button>
+       
+        <input type="checkbox" class="checkbox " id="chk" (click)="toggleDarkTheme()"/>
+        <label class="label mr-4 " for="chk" id="btn-theme">
+            <i class="fa fa-moon-o"></i>
+            <i class="fa fa-sun-o"></i>
+            <div class="ball" id="ball"></div>
+        </label>
       </li>
       <li class="nav-item pl-3">
-        <a (click)="sair()" class="m-0 font-weight-bold t-padrao fs-14 out ">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+        <a (click)="sair()" class="m-0 font-weight-bold t-padrao fs-25 out ">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
       </li>
     </ul>
   </div>

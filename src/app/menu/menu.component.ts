@@ -33,5 +33,8 @@ export class MenuComponent implements OnInit {
   toggleDarkTheme(){
     document.body.classList.toggle('dark-theme')
     document.body.classList.toggle('bg-secundary')
+    document.getElementById('btn-theme')?.classList.toggle('dark-theme')
+    document.getElementById('ball')?.classList.toggle('dark-theme')
   }
 }
+
