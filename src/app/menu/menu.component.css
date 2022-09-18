@@ -33,3 +33,7 @@ a{
 .margem{
     padding: auto;
 }
+.navbar {
+    z-index: 9999;
+  }
+  

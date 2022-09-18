@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 import { TemaService } from '../service/tema.service';
 import { Tema } from '../model/Tema';
 import { Postagem } from '../model/Postagem';
