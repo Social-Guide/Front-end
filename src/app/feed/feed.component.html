@@ -240,7 +240,7 @@
 
 
     <div class="col-md-6">
-      <div class="card mt-5 pt-2 pb-2 mb-4 shadow bg-transparent" *ngFor='let item of listaPostagem '>
+      <div class="card mt-5 pt-2 pb-2 mb-4 shadow bg-transparent" *ngFor='let item of listaPostagem | orderBy: key : reverse'>
 
         <div class="row d-flex align-items-center">
           <div class="col mt-3">

@@ -19,6 +19,7 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
