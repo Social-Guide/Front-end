@@ -2,6 +2,10 @@
     font-size: 14pt !important;
 }
 
+/* .corNavbar{
+  color: #2c4157 !important;
+} */
+
 .bg-padrao{
     background-color: #5b6c7e;
 }
@@ -11,13 +15,25 @@
 }
 
 .out:hover{
-    color: #c8c2c2 !important;
+    color: #ffffff !important;
 }
 
 .fa:hover{
-    color: #c8c2c2 !important;
+    color: #ffffff !important;
 }
 
 a{
     cursor: pointer;
 }
+
+.bg-menu{
+    background-color: #00B7DA;
+}
+
+.margem{
+    padding: auto;
+}
+.navbar {
+    z-index: 9999;
+  }
+  

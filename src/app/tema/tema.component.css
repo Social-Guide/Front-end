@@ -1,0 +1,14 @@
+.btcolor{
+    background-color: #ECECEC;
+}
+
+.t-color{
+    color: #23405B;
+}
+.t-color2{
+    color: #5b6c7e;
+}
+
+.text-cg-500{
+    color: var(--cg-500)!important;
+  }

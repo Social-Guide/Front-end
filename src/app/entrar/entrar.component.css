@@ -1,0 +1,57 @@
+#gradiente-bg {
+  background: linear-gradient(white, rgba(42, 163, 165, 0.3));   
+}
+
+.mgb-5 {
+  align-items: center;
+  padding: 60px;
+}
+
+.color1 {
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 25px;
+}
+
+.t-color {
+  color: #345574;
+}
+
+.bt-style {
+  background-color: #345574;
+  color: #FFFF;
+  font-size: 14px;
+}
+
+span {
+  position: absolute;
+  margin-left: 16px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  color: rgba(42, 56, 165, 0.579);
+}
+
+.form-group .form-control {
+  padding-left: 2.375rem;
+}
+
+.botao:hover {
+  background-color: #dff1f1;
+  color: #345574;
+  transform: scale(1.1);
+  transition: all 0.5s;
+
+}
+
+.cor-text{
+  color: #345574;
+}
+
+#img-bg{
+  background-image: url('../../assets/img/img-entrar/entrar-bg.png');
+  min-height: 965px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:contain;
+}

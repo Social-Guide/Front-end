@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { UserLogin } from '../model/UserLogin';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-entrar',
@@ -7,9 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntrarComponent implements OnInit {
 
-  constructor() { }
+  userLogin: UserLogin = new UserLogin()
 
-  ngOnInit(): void {
+  constructor(
+    private auth: AuthService,
+    private router: Router) { }
+
+  ngOnInit() {
+    window.scroll(0, 0)
   }
 
+  entrar() {
+    this.auth.entrar(this.userLogin).subscribe((resp: UserLogin) => {
+      this.userLogin = resp
+      environment.token = this.userLogin.token
+      environment.nome = this.userLogin.nome
+      environment.sobrenome = this.userLogin.sobrenome
+      environment.foto = this.userLogin.foto
+      environment.id = this.userLogin.id
+      environment.usuario = this.userLogin.usuario
+      this.router.navigate(["/feed"])
+    },
+    erro => {
+      if(erro.status == 401){
+        const element = document.querySelector("#senha");
+        if(element != null){
+          element.insertAdjacentHTML('afterend', '<p class="text-danger font-weight-bold mt-2 mb-2">• Senha incorreta</p>');
+        }
+      }
+    })
+  }
 }

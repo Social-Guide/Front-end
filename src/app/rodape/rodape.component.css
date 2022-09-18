@@ -1,19 +1,7 @@
-.bg-padrao{
-    background-color: #5b6c7e;
-}
-
-.bg-padrao1{
-    background-color: #2c4157;
-}
-
-.t-padrao{
-    color: aliceblue;
-}
-
 .social-network li{
     display: inline;
     margin: 0;
-   
+
 }
 
 .social-network{
@@ -22,31 +10,11 @@
     background-color: aliceblue;
     border-radius: 25px;
     width: 220px;
-    height: 80px; 
+    height: 80px;
 }
 
 .fa{
     font-size: 30pt;
     color: #5b6c7e;
     padding: 20px 20px;
-}
-
-/* .fa:hover{
-    background-color: #0072b1;
-} */
-
-.fa-instagram:hover {
-    background: -webkit-radial-gradient(33% 100% circle, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
-    background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-}
-
-.fa-linkedin:hover {
-    color: #0072b1;
-}
-
-.fa-facebook:hover {
-    color: #3b5998;
 }

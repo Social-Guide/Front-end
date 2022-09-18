@@ -1,1 +1,39 @@
-<p>entrar works!</p>
+<div class="container-fluid" id="gradiente-bg">
+  <div class="row d-flex align-items-center py-5">
+    <div class="col-md-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-9">
+          <h1 class="text-center mb-3 fs-40 cor-text">Entrar</h1>
+          <hr>
+          <div class="form-group ">
+            <label for="usuario" class="cor-text">Usuário</label>
+            <span class="fa fa-envelope"></span>
+            <input [(ngModel)]="userLogin.usuario" class="form-control" type="text" name="usuario" id="usuario"
+              placeholder="Seu usuário">
+          </div>
+
+          <div class="form-group">
+            <label for="senha" class="cor-text">Senha</label>
+            <span class="fa fa-lock"></span>
+            <input [(ngModel)]="userLogin.senha" class="form-control" type="password" name="senha" id="senha"
+              (keyup.enter)="entrar()" placeholder="Sua senha">
+          </div>
+
+          <!-- <div class="form-group text-center">
+              <a href="">Esqueceu a senha?</a>
+            </div> -->
+
+          <div class="d-flex justify-content-center">
+            <!-- <button type="submit" class="btn btcolor mt-3 mr-1 botao" routerLink="/inicio">Voltar</button> -->
+            <button type="submit" class="btn bt-style mt-3 ml-1 botao" (click)="entrar()">Entrar</button>
+          </div>
+
+          <hr class="mt-4 mb-4">
+          <p class="text-center"> Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se!</a></p>
+        </div>
+      </div>
+    </div>  
+
+  <div class="col-md-7 " id="img-bg">
+  </div>
+</div>

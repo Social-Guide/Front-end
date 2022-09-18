@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../model/User';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-cadastrar',
@@ -7,9 +10,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarComponent implements OnInit {
 
-  constructor() { }
+  user: User = new User
 
-  ngOnInit(): void {
+  confirmarSenha: string
+  tipoUsuario: string
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+    ) { }
+
+  ngOnInit() {
+    window.scroll(0,0)
   }
 
+  confirmSenha(event: any){
+    this.confirmarSenha = event.target.value
+  }
+
+  tipoUser(event: any){
+    this.tipoUsuario = event.target.value
+  }
+
+  cadastrar() {
+    let passwordRegex: RegExp = /(?=.*[#$%¨&*()!@}{,.^?~=+\-_\/*\-+.\|])(?=.*[a-zA-Z])(?=.*[0-9]).{8,}/mg;
+
+    this.user.tipo = this.tipoUsuario
+
+    if (this.user.senha == undefined || !passwordRegex.test(this.user.senha)) {
+      alert('A senha deve conter letra, número e caractere especial!')
+    } else if (this.user.senha != this.confirmarSenha) {
+      alert('As senhas estão incorretas!')
+    } else {
+      this.authService.cadastrar(this.user).subscribe((resp: User) => {
+        this.user = resp
+        this.router.navigate(['/entrar'])
+        alert('Usuário cadastrado com sucesso!')
+      })
+    }
+
+  }
 }
