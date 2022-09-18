@@ -15,6 +15,9 @@ export class MeuPerfilComponent implements OnInit {
 
   idUser = environment.id
 
+  key = 'data'
+  reverse = true
+
   postagem: Postagem = new Postagem()
   user: User = new User()
 

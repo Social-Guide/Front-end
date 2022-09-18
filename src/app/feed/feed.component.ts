@@ -155,6 +155,7 @@ export class FeedComponent implements OnInit {
 
     this.user.id = this.idUser
     this.postagem.usuario = this.user
+    this.postagem.qtd_like = 0
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
