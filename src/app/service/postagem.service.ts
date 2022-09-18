@@ -8,7 +8,7 @@ import { Postagem } from '../model/Postagem';
   providedIn: 'root'
 })
 export class PostagemService {
-  
+
   constructor(private http: HttpClient) { }
 
   token = {
@@ -34,4 +34,13 @@ export class PostagemService {
   deletePostagem(id: number){
     return this.http.delete(`http://localhost:8080/postagens/${id}`, this.token)
   }
+
+  adicionarLike(postagem: number){
+    return this.http.post(`http://localhost:8080/postagens/like/${postagem}/${environment.id}`, this.token)
+  }
+
+  removerLike(postagem: number){
+    return this.http.delete(`http://localhost:8080/postagens/like/${postagem}/${environment.id}`, this.token)
+  }
+
 }

@@ -31,10 +31,10 @@ export class EntrarComponent implements OnInit {
       environment.id = this.userLogin.id
       environment.usuario = this.userLogin.usuario
       this.router.navigate(["/feed"])
-    }, 
+    },
     erro => {
       if(erro.status == 401){
-        const element = document.querySelector("#senha");    
+        const element = document.querySelector("#senha");
         if(element != null){
           element.insertAdjacentHTML('afterend', '<p class="text-danger font-weight-bold mt-2 mb-2">• Senha incorreta</p>');
         }

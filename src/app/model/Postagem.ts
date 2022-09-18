@@ -1,3 +1,4 @@
+import { Like } from "./Like"
 import { Tema } from "./Tema"
 import { User } from "./User"
 
@@ -12,4 +13,7 @@ export class Postagem{
     public parceiros_site: string
     public usuario: User
     public tema: Tema
+    public like: Like[]
+    public qtd_like: number
+    public user_liked: boolean
 }
