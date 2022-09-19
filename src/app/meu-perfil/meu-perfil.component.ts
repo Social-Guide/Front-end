@@ -43,11 +43,16 @@ export class MeuPerfilComponent implements OnInit {
       this.router.navigate(['/inicio'])
     }
     if(document.body.classList.contains('dark-theme')){
-      cardDarkTheme()
+      cardDarkTheme() 
     }
     this.theme = document.body.classList.contains('dark-theme')
 
     this.findByIdUser()
+  }
+
+  checktheme(){
+    this.theme = document.body.classList.contains('dark-theme')
+    return this.theme
   }
 
   findByIdUser(){
