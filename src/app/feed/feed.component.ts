@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 import { TemaService } from '../service/tema.service';
 import { Tema } from '../model/Tema';
 import { Postagem } from '../model/Postagem';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { User } from '../model/User';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-feed',
@@ -14,6 +15,9 @@ import { User } from '../model/User';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+
+  key = 'data'
+  reverse = true
 
   nome = environment.nome
   sobrenome = environment.sobrenome
@@ -41,7 +45,7 @@ export class FeedComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
     if (environment.token == '') {
       this.router.navigate(['/inicio'])
@@ -50,7 +54,7 @@ export class FeedComponent implements OnInit {
     this.findAllTemas()
     this.getAllTemas()
     this.getAllPostagens()
-    this.idTema = this.route.snapshot.params['id']
+    // this.idTema = this.route.snapshot.params['id']
 
   }
 
@@ -60,16 +64,16 @@ export class FeedComponent implements OnInit {
     })
   }
 
-  cadastrar(){
+  cadastrar() {
     this.temaService.postTema(this.tema).subscribe({
-      next: (resp:Tema) =>{
-      this.tema = resp
-      alert('Tema cadastrado com sucesso!')
-      this.tema = new Tema()
-      this.findAllTemas()
+      next: (resp: Tema) => {
+        this.tema = resp
+        alert('Tema cadastrado com sucesso!')
+        this.tema = new Tema()
+        this.findAllTemas()
       },
       error: (erro) => {
-        if(erro.status == 400){
+        if (erro.status == 400) {
           alert('Tema não pode ser cadastrado pois já existe um tema com está descrição');
         }
       },
@@ -77,46 +81,82 @@ export class FeedComponent implements OnInit {
 
   }
 
-  getAllTemas(){
+  getAllTemas() {
     this.temaService.getAllTemas().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
     })
   }
 
-  
 
-  findByIdTema(id:number){
-    this.temaService.getByIdTema(id).subscribe((resp: Tema) =>{
+
+  findByIdTema(id: number) {
+    this.temaService.getByIdTema(id).subscribe((resp: Tema) => {
       this.tema = resp
     })
   }
 
-  apagar (){
-    this.temaService.deleteTema(this.tema.id).subscribe(()=>{
+  apagar() {
+    this.temaService.deleteTema(this.tema.id).subscribe(() => {
       alert('Tema apagado com sucesso')
       this.getAllTemas()
     })
   }
 
-  getAllPostagens(){
-    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) =>{
-      this.listaPostagem = resp
-      console.log(resp)
+  clickLike(postagem: number, like: boolean) {
+    if (like != undefined && like) {
+      this.removerLike(postagem)
+    } else {
+      this.adicionarLike(postagem)
+    }
+  }
+
+  adicionarLike(postagem: number) {
+    this.postagemService.adicionarLike(postagem).subscribe(() => {
+      this.getAllPostagens();
+    });
+  }
+
+  removerLike(postagem: number) {
+    this.postagemService.removerLike(postagem).subscribe(() => {
+      this.getAllPostagens();
     })
   }
 
-  findByIdUser(){
+  getAllPostagens() {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listaPostagem = resp
+      this.listaPostagem.forEach(function (value) {
+        value.like.forEach(function (value2) {
+          if (value2.usuario === environment.id) {
+            value.user_liked = true
+          }
+        })
+      });
+    })
+  }
+
+  findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     })
   }
 
-  publicar(){
+  atualizar() {
+    this.temaService.putTema(this.tema).subscribe((resp: Tema) => {
+      this.tema = resp
+      alert('Tema atualizado com sucesso')
+      this.getAllTemas()
+    })
+
+  }
+
+  publicar() {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
 
     this.user.id = this.idUser
     this.postagem.usuario = this.user
+    this.postagem.qtd_like = 0
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
@@ -125,6 +165,18 @@ export class FeedComponent implements OnInit {
 
       this.postagem = new Postagem()
       this.getAllPostagens()
+      
+    }, erro => {
+      if(erro.status == 500){
+        const element = document.querySelector("#titulo");
+        if(element != null){
+          alert("Não foi possível concluir a postagem. Verifique se seu título tem mais de 5 caracteres.")
+        }
+      }
     })
+  }
+
+  clearTema() {
+    this.tema = new Tema()
   }
 }

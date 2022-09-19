@@ -2,9 +2,9 @@
     <div class="row d-flex justify-content-center">
         <div class="col-md-9 card my-5 p-3 shadow fixed-left bg-transparent">
             <div class="row d-flex align-items-center">
-                <img src="{{user.foto}}" alt="" class="img-fluid rounded-circle shadow ml-5" width="100px"
+                <img src="{{user.foto}}" alt="" class="rounded-circle borda1 shadow ml-5" width="100px"
                     height="100px" onerror="this.src = '../../assets/img/user2.jpg'">
-                <p class="text-center font-weight-bold ml-5">{{user.nome}} {{user.sobrenome}}</p>
+                <p class="text-center color-titulo fs-14 font-weight-bold ml-5">{{user.nome}} {{user.sobrenome}}</p>
             </div>
         </div>
     </div>
@@ -15,20 +15,20 @@
         <div class="col-md-8">
             <nav>
                 <div class="nav nav-tabs d-flex justify-content-center bg-transparent" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active text-secondary font-weight-bold bg-transparent" id="nav-minhasPostagens-tab"
+                    <a class="nav-item nav-link active color-titulo font-weight-bold" id="nav-minhasPostagens-tab"
                         data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"
                         aria-selected="true">Minhas Postagens</a>
 
-                        <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab"
-                href="#postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por
-                tema</a>
+                    <a class="nav-item nav-link color-titulo font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab"
+                    href="#postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por
+                    tema</a>
                 </div>
             </nav>
 
             <div class="tab-content mt-5 bg-transparent" id="postagens">
                 <div class="tab-pane fade show active" id="minhasPostagens" role="tabpanel"
                     aria-labelledby="nav-minhasPostagens-tab">
-                    <div class="row card mt-5 pt-2 pb-2 mb-4 shadow bg-transparent" *ngFor='let item of user.postagens'>
+                    <div class="row card mt-5 pt-2 pb-2 mb-4 shadow bg-transparent" *ngFor='let item of user.postagens | orderBy: key : reverse'>
                         <div class="col-md-12">
                             <div class="d-flex flex-column flex-md-row">
                                 <div class="d-flex justify-content-end">

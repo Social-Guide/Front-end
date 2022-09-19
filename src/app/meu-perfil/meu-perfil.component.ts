@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
@@ -14,6 +14,9 @@ import { AuthService } from '../service/auth.service';
 export class MeuPerfilComponent implements OnInit {
 
   idUser = environment.id
+
+  key = 'data'
+  reverse = true
 
   postagem: Postagem = new Postagem()
   user: User = new User()

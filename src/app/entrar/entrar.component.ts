@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
 
@@ -31,12 +31,12 @@ export class EntrarComponent implements OnInit {
       environment.id = this.userLogin.id
       environment.usuario = this.userLogin.usuario
       this.router.navigate(["/feed"])
-    }, 
+    },
     erro => {
       if(erro.status == 401){
-        const element = document.querySelector("#senha");    
+        const element = document.querySelector("#senha");
         if(element != null){
-          element.insertAdjacentHTML('afterend', '<p class="text-danger font-weight-bold mt-2 mb-2">• Senha incorreta</p>');
+          element.insertAdjacentHTML('afterend', '<p class="text-danger font-weight-bold mt-2 mb-2">• Usuário ou senha incorreta</p>');
         }
       }
     })

@@ -5,11 +5,21 @@
 .t-azul{
     color: #23405B;
 }
-
-.btn-azulclaro{
-    background-color: #7CB1E2;
+.modal{
+  z-index: 100000;
 }
 
-element.style {
-    z-index: 0 !important;
+.borda{
+    border: 3px solid rgb(0, 0, 0);
+    margin: auto;
 }
+
+.like{
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.btn{
+  text-align: left !important;
+}
+
