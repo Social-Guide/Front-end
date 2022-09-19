@@ -5,6 +5,7 @@ import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
 import { AuthService } from '../service/auth.service';
+import { PostagemService } from '../service/postagem.service';
 
 @Component({
   selector: 'app-meu-perfil',
@@ -24,9 +25,12 @@ export class MeuPerfilComponent implements OnInit {
   listaPostagem: Postagem[]
   listaTemas: Tema[]
 
+  idPost: number
+
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private postagemService: PostagemService
   ) { }
 
   ngOnInit(){
@@ -44,5 +48,23 @@ export class MeuPerfilComponent implements OnInit {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     })
+  }
+
+  findByIdPostagem(id: number) {
+    this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
+      this.postagem = resp
+    })
+  }
+
+  apagar(){
+    this.postagemService.deletePostagem(this.postagem.id).subscribe(()=>{
+      alert('Postagem apagada com sucesso!')
+      this.findByIdUser()
+    })
+  }
+
+  setPostagem(postagem: Postagem){
+    console.log(postagem)
+    this.postagem = postagem
   }
 }
