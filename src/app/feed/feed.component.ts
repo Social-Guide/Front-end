@@ -56,12 +56,16 @@ export class FeedComponent implements OnInit {
     this.findAllTemas()
     this.getAllTemas()
     this.getAllPostagens()
-    this.theme = document.body.classList.contains('dark-theme')
+    this.checktheme()
     // this.idTema = this.route.snapshot.params['id']
     if(document.body.classList.contains('dark-theme')){
       cardDarkTheme()
     }
 
+  }
+  checktheme(){
+    this.theme = document.body.classList.contains('dark-theme')
+    return this.theme
   }
 
   findAllTemas() {
