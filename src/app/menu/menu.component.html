@@ -14,16 +14,29 @@
       </li>
     </ul>
 
+    <!-- <li class="nav-item pl-3">
+        <a [routerLink]="['/user-edit', id]">
+          <p class="m-0 text-white fs-16"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+        </a>
+    </li> -->
+
     <ul class="navbar-nav">
       <li class="nav-item pl-3 text-center">
         <a routerLink="/feed" class="m-0 font-weight-bold t-padrao1 fs-14 out ">Feed</a>
     </li>
+      
+  
     </ul>
 
     <ul class="navbar-nav ml-auto d-flex align-items-center">
       <li>
-        <button (click)="toggleDarkTheme()" class="btn"><i class="fa fa-moon-o" aria-hidden="true"></i>
-        </button>
+       
+        <input type="checkbox" class="checkbox " id="chk" (click)="darkTheme()"/>
+        <label class="label mr-4 " for="chk" id="btn-theme">
+            <i class="fa fa-moon-o" ></i>
+            <i class="fa fa-sun-o"></i>
+            <div class="ball" id="ball"></div>
+        </label>
       </li>
       <li class="nav-item pl-3">
         <a (click)="sair()" class="m-0 font-weight-bold t-padrao1 fs-14 out ">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>

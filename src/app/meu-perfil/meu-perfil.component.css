@@ -5,3 +5,13 @@ a:hover{
 .borda1{
     border: 3px solid #23405B !important;
 }
+
+.card.dark-theme{
+    --bkg-color: #111;
+  }
+  .card{
+    --bkg-color: #fff;
+  }
+  .card{
+    background-color: var(--bkg-color) !important;
+  }

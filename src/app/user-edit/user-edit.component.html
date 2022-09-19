@@ -1,73 +1,74 @@
-<div class="container mb-5 mt-5 navbar-paddin">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center color-titulo">Atualizar meu usuário</h1>
-        </div>
-    </div>
+<div class="container-fluid gradient ">
+   
+    <div class="row d-flex justify-content-center align-items-center">
+       
+        <hr>
 
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-10">
-
-            <form class="mt-5 mb-1">
-                <div class="row">
+        <div class="col-md-12 form-box ">
+            <h4 class=" font color-titulo fs-25">Atualizar usuário</h4>
+            <hr>
+            <form>
+                <div class="row ">
                     <div class="col-6">
-                        <div class="form-group">
-                            <label for="nome">Nome: </label>
-                            <span class="fa fa-user"></span>
-                            <input [(ngModel)]="user.nome" class="form-control" type="text" name="nome" id="nome"
+                             
+                        <div class="form-group ">
+                           
+                            <label class="font-weight-bolder color-titulo" for="nome ">Nome: </label>
+                            
+                            <input [(ngModel)]="user.nome" class="input form-control" type="text" name="nome" id="nome"
                                 placeholder="Seu nome">
                         </div>
                     </div>
-
+ 
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="nome">Sobrenome: </label>
-                            <span class="fa fa-user"></span>
-                            <input [(ngModel)]="user.sobrenome" class="form-control" type="text" name="sobrenome"
+                            <label class="font-weight-bolder color-titulo" for="nome">Sobrenome: </label>
+                            
+                            <input [(ngModel)]="user.sobrenome" class=" input form-control" type="text" name="sobrenome"
                                 id="sobrenome" placeholder="Seu sobrenome">
                         </div>
                     </div>
-
+ 
                 </div>
-
+ 
                 <div class="form-group">
-                    <label for="usuario">Usuário: </label>
-                    <span class="fa fa-envelope"></span>
-                    <input [(ngModel)]="user.usuario" class="form-control" type="text" name="usuario" id="usuario"
+                    <label class="font-weight-bolder color-titulo" for="usuario">Usuário: </label>
+                   
+                    <input [(ngModel)]="user.usuario" class="input form-control" type="text" name="usuario" id="usuario"
                         placeholder="Seu e-mail">
                 </div>
-
+ 
                 <div class="form-group">
-                    <label for="foto">Link da foto: </label>
-                    <span class="fa fa-camera"></span>
-                    <input [(ngModel)]="user.foto" class="form-control" type="text" name="foto" id="foto"
+                    <label class="font-weight-bolder color-titulo" for="foto">Link da foto: </label>
+                   
+                    <input [(ngModel)]="user.foto" class=" input form-control" type="text" name="foto" id="foto"
                         placeholder="Link da foto">
                 </div>
-
+ 
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="senha">Senha: </label>
-                            <span class="fa fa-lock"></span>
-                            <input (input)="confirmSenha($event)" class="form-control" type="password" name="senha"
+                            <label for="senha" class="font-weight-bolder color-titulo">Senha: </label>
+                            
+                            <input (input)="confirmSenha($event)" class="input form-control" type="password" name="senha"
                                 id="senha" placeholder="Sua senha">
                         </div>
                     </div>
-
+ 
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="confirmarSenha">Confirmar sua senha: </label>
-                            <span class="fa fa-lock"></span>
-                            <input [(ngModel)]="user.senha" class="form-control" type="password" name="confirmarSenha"
+                            <label class="font-weight-bolder color-titulo" for="confirmarSenha">Confirmar sua senha: </label>
+                            
+                            <input [(ngModel)]="user.senha" class="input form-control" type="password" name="confirmarSenha"
                                 id="confirmarSenha" placeholder="Confirmar sua senha">
                         </div>
                     </div>
                 </div>
-
+ 
                 <div class="form-group">
-                    <label for="tipoDeUsuario">Tipo de usuário: </label>
-                    <span class="fa fa-cog"></span>
-                    <select [(ngModel)]="user.tipo" class="form-control" name="tipoUser" id="tipoUser"
+                    <label class="font-weight-bolder color-titulo" for="tipoDeUsuario">Tipo de usuário: </label>
+                    
+                    <select [(ngModel)]="user.tipo" class="input form-control" name="tipoUser" id="tipoUser"
                         (change)="tipoUser($event)">
                         <option>Selecione um tipo de usuário</option>
                         <option value="normal">Normal</option>
@@ -75,11 +76,18 @@
                     </select>
                 </div>
             </form>
-
-            <div class="d-flex justify-content-center mt-5 mb-5">
+ 
+            <div>
                 <button type="submit" class="btn btn-info mr-4" (click)="atualizar()">Atualizar</button>
-                <button type="submit" class="btn btn-dark" routerLink="/feed">Cancelar</button>
+                <button type="submit" class="btn btn-outline-dark" routerLink="/feed">Cancelar</button>
             </div>
         </div>
+
+        <div> <hr>
+            <hr>
+            </div>
     </div>
 </div>
+
+
+ 

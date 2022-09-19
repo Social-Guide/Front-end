@@ -23,3 +23,14 @@
   text-align: left !important;
 }
 
+.card.dark-theme{
+  --bkg-color: #111;
+}
+
+.card{
+  --bkg-color: #fff;
+}
+
+.card{
+  background-color: var(--bkg-color) !important;
+}

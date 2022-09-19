@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 .fs-14{
@@ -12,28 +12,24 @@ html{
     font-size: 54pt;
 }
 
-.fs-18{
-    font-size: 18pt;
+.fs-18 {
+  font-size: 18pt;
 }
 
-.fs-15{
-    font-size: 15pt;
+.fs-15 {
+  font-size: 15pt;
 }
 
-.fs-45{
-    font-size: 45pt;
+.fs-45 {
+  font-size: 45pt;
 }
 
-.fs-25{
-    font-size: 25pt;
+.fs-25 {
+  font-size: 25pt !important;
 }
 
-.fs-30{
-    font-size: 30pt;
-}
-
-.fs-25{
-    font-size: 25px;
+.fs-30 {
+  font-size: 30pt;
 }
 
 .btn-blue{
@@ -45,54 +41,56 @@ html{
     margin: auto;
 }
 
-.size-card{
-    height: 530px;
+.size-card {
+  height: 530px;
 }
 
 .navbar-paddin {
-    padding-top: 80px;
+  padding-top: 80px;
 }
 
-.bg-cg-100{
-    background-color: var(--cg-100);
-  }
+.bg-cg-100 {
+  background-color: var(--cg-100);
+}
 
-  .py-50{
-    padding: 7rem 0;
-  }
+.py-50 {
+  padding: 7rem 0;
+}
 
-  .bg-padrao{
-    background-color: #ececec;
+.bg-padrao {
+  background-color: #ececec;
 }
 
 .bg-padrao1{
-    background-color: #2c4157;
-}
-
-.t-padrao{
-    color: #ECECEC;
+  background-color: #23405B;
 }
 
 .t-padrao1{
   color: #23405B;
 }
 
-  .corFooterCopy{
+.t-padrao {
+  color: #ECECEC;
+}
+
+.corFooterCopy {
   color: #23405B !important;
 }
 
-.text-cg-500{
-    color: var(--cg-500)!important;
-  }
-
-  .fs-10{
-    font-size: 10pt;
+.text-cg-500 {
+  color: var(--cg-500) !important;
 }
-.bb-cg-200{
-    border-bottom: 1px solid var(--cg-200);
-  }
+
+.fs-10 {
+  font-size: 10pt;
+}
+
+.bb-cg-200 {
+  border-bottom: 1px solid var(--cg-200);
+}
+
 .color-nav {
-    background-color: #98E3AD !important;
+  background-color: #98E3AD !important;
 }
 
 /* ----------------------------------------- Dark Theme */
@@ -124,9 +122,11 @@ html{
   body {
     background: var(--bkg-color) !important;
   }
-  a, p, label {
+
+  a,p,label,h5,h2,td,th {
     color: var(--text-color);
   }
+
   button {
     padding: 10px;
     border: none;
@@ -142,3 +142,21 @@ html{
   .color-titulo{
     color: var(--color-titulo);
   }
+
+  .modal-content {
+  --text-color: #23405B;
+  --bkg-color: #fff;
+  --btn-txt-color: white;
+  --btn-bg-color: rgb(11, 88, 160);
+  }
+
+  .modal-content.dark-theme {
+  --text-color: #eee;
+  --bkg-color: #252222 !important;
+  --btn-txt-color: rgb(46, 43, 43) !important;
+  --btn-bg-color: rgb(20, 211, 195);
+  }
+
+  .modal-content {
+  background: var(--bkg-color) !important;
+}

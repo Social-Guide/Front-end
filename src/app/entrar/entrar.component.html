@@ -1,8 +1,8 @@
-<div class="container-fluid" id="gradiente-bg">
-  <div class="row d-flex align-items-center py-5">
-    <div class="col-md-5">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-9">
+<div class="container-fluid d-flex align-items-center justify-content-center" id="gradiente-bg">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row margem">
+        <div class="col-md-6">
           <h1 class="text-center mb-3 fs-40 cor-text">Entrar</h1>
           <hr>
           <div class="form-group ">
@@ -24,16 +24,19 @@
             </div> -->
 
           <div class="d-flex justify-content-center">
-            <!-- <button type="submit" class="btn btcolor mt-3 mr-1 botao" routerLink="/inicio">Voltar</button> -->
             <button type="submit" class="btn bt-style mt-3 ml-1 botao" (click)="entrar()">Entrar</button>
           </div>
 
           <hr class="mt-4 mb-4">
-          <p class="text-center"> Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se!</a></p>
+          <p class="text-center "> Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se!</a></p>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn bt-style mt-3 botao" routerLink="/inicio">Se perdeu? Volte para o
+              início</button>
+          </div>
         </div>
-      </div>
-    </div>  
 
-  <div class="col-md-7 " id="img-bg">
+        <div class="col-md-6" id="img-bg"><img src="../../assets/img/img-entrar/entrar-bg.png" width="600px" alt=""></div>
+
+      </div>
+    </div>
   </div>
-</div>
