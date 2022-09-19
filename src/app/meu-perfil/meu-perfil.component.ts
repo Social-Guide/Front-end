@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { cardDarkTheme } from 'src/darkTheme';
 import { environment } from 'src/environments/environment';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
@@ -23,6 +24,7 @@ export class MeuPerfilComponent implements OnInit {
 
   listaPostagem: Postagem[]
   listaTemas: Tema[]
+  theme: boolean
 
   constructor(
     private router: Router,
@@ -36,6 +38,10 @@ export class MeuPerfilComponent implements OnInit {
       // alert('Sua sessão expirou, faça o login novamente')
       this.router.navigate(['/inicio'])
     }
+    if(document.body.classList.contains('dark-theme')){
+      cardDarkTheme()
+    }
+    this.theme = document.body.classList.contains('dark-theme')
 
     this.findByIdUser()
   }
