@@ -37,6 +37,7 @@ export class FeedComponent implements OnInit {
   idUser = environment.id
   theme: boolean
 
+
   constructor(
     private router: Router,
     private temaService: TemaService,
@@ -62,7 +63,6 @@ export class FeedComponent implements OnInit {
     }
 
   }
-
 
   findAllTemas() {
     this.temaService.getAllTemas().subscribe((resp: Tema[]) => {

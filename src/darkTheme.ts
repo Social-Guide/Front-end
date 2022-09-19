@@ -4,6 +4,7 @@ export function toggleDarkTheme(){
     document.getElementById('btn-theme')?.classList.toggle('dark-theme')
     document.getElementById('ball')?.classList.toggle('dark-theme')
     cardDarkTheme()
+    modalTheme()
   }
 
   export function cardDarkTheme(){
@@ -12,3 +13,10 @@ export function toggleDarkTheme(){
       elements[i].classList.toggle('dark-theme')
     }
   }
+
+  function modalTheme(){
+    var elements = document.getElementsByClassName('modal-content')
+    for(var i =0; i< elements.length; i++){
+      elements[i].classList.toggle('dark-theme')
+    }
+}
