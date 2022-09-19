@@ -7,7 +7,7 @@
             onerror="this.src = '../../assets/img/user2.jpg'">
         </div>
         <div class="row d-flex justify-content-center">
-          <p class="text-center font-weight-bold color-titulo fs-25">{{nome}}</p>
+          <p class="text-center font-weight-bold color-titulo fs-25 font-theme">{{nome}}</p>
         </div>
         <div class="row d-flex justify-content-center mt-3">
           <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4" [routerLink]="['/meu-perfil', id]">
@@ -82,7 +82,7 @@
       <div class="modal fade" id="novoTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+          <div class="modal-content" [ngClass]="{'dark-theme':theme}">
             <div class="modal-header">
               <h5 class="modal-title" id="TituloModalCentralizado">Novo Tema</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -147,7 +147,7 @@
       <div class="modal fade" id="deleteTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+          <div class="modal-content" [ngClass]="{'dark-theme':theme}">
             <div class="modal-header">
               <h5 class="modal-title" id="TituloModalCentralizado">Novo Tema</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -194,7 +194,7 @@
       <div class="modal fade" id="editTema" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+          <div class="modal-content" [ngClass]="{'dark-theme':theme}">
             <div class="modal-header">
               <h5 class="modal-title" id="TituloModalCentralizado">Novo Tema</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -268,7 +268,7 @@
       <div class="card my-5 p-3 shadow fixed-left bg-transparent">
         <div class="row">
           <div class="col-md-12">
-            <div class="elfsight-app-19824f8c-b788-4ed8-8074-905538a62fc6 element.style "></div>
+            <!-- <div class="elfsight-app-2a5ee209-13cb-47c1-8199-a18254d2ce34"></div> -->
           </div>
         </div>
       </div>
