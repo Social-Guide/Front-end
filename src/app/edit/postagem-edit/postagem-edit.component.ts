@@ -77,6 +77,10 @@ export class PostagemEditComponent implements OnInit {
       }
     }
     else {
+      this.tema = new Tema()
+      this.user = new User()
+      this.user.id = this.postagem.usuario.id
+      this.postagem.usuario = this.user
       this.tema.id = this.idTema
       this.postagem.tema = this.tema
 
