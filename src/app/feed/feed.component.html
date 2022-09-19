@@ -35,7 +35,7 @@
       <div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+          <div class="modal-content" [ngClass]="{'dark-theme':theme}">
             <div class="modal-header">
               <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
@@ -232,8 +232,7 @@
 
     <!-- Feed -->
     <div class="col-md-6">
-      <div class="card mt-5 pt-2 pb-2 mb-4 shadow bg-transparent"
-        *ngFor='let item of listaPostagem | orderBy: key : reverse'>
+      <div class="card mt-5 pt-2 pb-2 mb-4 shadow bg-transparent" id="card-postagem" *ngFor='let item of listaPostagem | orderBy: key : reverse' [ngClass]="{'dark-theme':theme}">
         <div class="row d-flex align-items-center">
           <div class="col mt-3">
             <div class="d-flex justify-content-start">

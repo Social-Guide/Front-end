@@ -7,6 +7,7 @@ import { Postagem } from '../model/Postagem';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { User } from '../model/User';
+import { cardDarkTheme, toggleDarkTheme } from 'src/darkTheme';
 
 @Component({
   selector: 'app-feed',
@@ -34,6 +35,8 @@ export class FeedComponent implements OnInit {
   idTema: number
 
   idUser = environment.id
+  theme: boolean
+
 
   constructor(
     private router: Router,
@@ -53,7 +56,11 @@ export class FeedComponent implements OnInit {
     this.findAllTemas()
     this.getAllTemas()
     this.getAllPostagens()
+    this.theme = document.body.classList.contains('dark-theme')
     // this.idTema = this.route.snapshot.params['id']
+    if(document.body.classList.contains('dark-theme')){
+      cardDarkTheme()
+    }
 
   }
 
