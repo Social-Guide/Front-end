@@ -21,6 +21,7 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0, 0)
   }
 
   sair(){
