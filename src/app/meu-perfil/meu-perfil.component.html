@@ -15,23 +15,25 @@
         <div class="col-md-8">
             <nav>
                 <div class="nav nav-tabs d-flex justify-content-center bg-transparent" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active text-secondary font-weight-bold bg-transparent" id="nav-minhasPostagens-tab"
-                        data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"
-                        aria-selected="true">Minhas Postagens</a>
+                    <a class="nav-item nav-link active text-secondary font-weight-bold bg-transparent"
+                        id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab"
+                        aria-controls="nav-minhasPostagens" aria-selected="true">Minhas Postagens</a>
 
-                        <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab"
-                href="#postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por
-                tema</a>
+                    <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagemTema-tab"
+                        data-toggle="tab" href="#postagemTema" role="tab" aria-controls="nav-postagemTema"
+                        aria-selected="false">Postagens por
+                        tema</a>
                 </div>
             </nav>
 
             <div class="tab-content mt-5 bg-transparent" id="postagens">
                 <div class="tab-pane fade show active" id="minhasPostagens" role="tabpanel"
                     aria-labelledby="nav-minhasPostagens-tab">
-                    <div class="row card mt-5 pt-2 pb-2 mb-4 shadow bg-transparent" *ngFor='let item of user.postagens | orderBy: key : reverse'>
+                    <div class="row card mt-5 pt-2 pb-2 mb-4 shadow bg-transparent"
+                        *ngFor='let item of user.postagens | orderBy: key : reverse'>
                         <div class="col-md-12">
-                            <div class="d-flex flex-column flex-md-row">
-                                <div class="d-flex justify-content-end">
+                            <div class="d-flex justify-content-end row">
+                                <div class="d-flex mt-3 mb-0">
                                     <p class="text-right"><i class="fa fa-calendar" aria-hidden="true"></i>
                                         {{item.data | date: 'dd/MM/yyyy'}}</p>
                                     <p class="text-right ml-4 mr-5"><i class="fa fa-bookmark-o" aria-hidden="true"></i>
@@ -44,21 +46,27 @@
                                 onerror="this.src = '../../assets/img/semfoto.jpg'">
                             <p class="card-text mt-3 pb-4">{{item.texto}}</p>
 
-                            <a [routerLink]="['/postagem-edit', item.id]" class="btn btn-info mr-3">Editar</a>
-                            <a [routerLink]="['/postagem-delete', item.id]" class="btn btn-dark">Apagar</a>
+                            <div class="d-flex justify-content-end mb-4">
+                                <a [routerLink]="['/postagem-edit', item.id]" class="btn btn-info mr-3"><i
+                                        class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <a [routerLink]="['/postagem-delete', item.id]" class="btn btn-dark"><i
+                                        class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="tab-pane fade show active" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
+            <div class="tab-pane fade show active" id="postagemTema" role="tabpanel"
+                aria-labelledby="nav-postagemTema-tab">
                 <div class="card-columns bg-transparent" *ngFor="let tema of listaTemas">
                     <div class="card text-center" *ngFor="let item of tema.postagem">
                         <div class="card-body">
                             <p>AAAAAAAAAAAAAAAAAAAAA</p>
                             <h5 class="card-title m-0">{{item.titulo}}</h5>
                             <p class="card-text">{{item.texto}}</p>
-                            <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data
+                            <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às
+                                    {{item.data
                                     | date: 'HH:mm'}}</small></p>
                             <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}
                                     {{item.usuario.sobrenome}}</small></p>
