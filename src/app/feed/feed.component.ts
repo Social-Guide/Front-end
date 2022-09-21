@@ -176,13 +176,23 @@ export class FeedComponent implements OnInit {
       
     }, erro => {
       if(erro.status == 500){
-        const element = (document.querySelector("#titulo") as HTMLInputElement);
-        console.log(element.value)
-        if(element == null){
-          alert("título não pode ser nulo")
+        const titulo = (document.querySelector("#titulo") as HTMLInputElement);
+        const texto = (document.querySelector("#texto") as HTMLInputElement);
+        const tema = (document.querySelector("#tema") as HTMLInputElement);
+        if(titulo.value == ""){
+          alert("Não foi possível concluir a postagem. Título não pode ser nulo")
         }
-        else if(element.value.length <= 5 ){
+        else if(titulo.value.length < 5 ){
           alert("Não foi possível concluir a postagem. Verifique se seu título tem mais de 5 caracteres.")
+        }
+        else if(texto.value == ""){
+          alert('Não foi possível concluir a postagem. Texto não pode ser nulo')
+        }
+        else if(texto.value.length > 255){
+          alert('Não foi possível concluir a postagem. Verifique se seu texto tem menos de 255 caracteres.')
+        }
+        else if(tema.value == ""){
+          alert('Não foi possível concluir a postagem. Selecione um tema')
         }
       }
     })
