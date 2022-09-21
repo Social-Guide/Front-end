@@ -1,5 +1,5 @@
 html{
-    scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 .logotipo{
@@ -129,7 +129,7 @@ a{
 /* Cards */
 
 .card-autoras{
-  height: 250px;
+  height: 280px;
   border-radius: 20px;
 }
 
@@ -173,6 +173,26 @@ a{
   border: 2px solid #23405B;
 }
 
+
+.fa.fa-linkedin{
+  color: #0e76a8 !important;
+  margin: 0;
+  padding: 0;
+  margin-left: 5px;
+  font-size: 22pt;
+}
+
+.fa.fa-github{
+  margin: 0;
+  padding: 0;
+  margin-right: 5px;
+  font-size: 22pt;
+}
+
+.contato{
+  margin-top: 20px;
+}
+
 /* Transição com texto */
 
 .container-image {
@@ -195,6 +215,14 @@ a{
   margin: auto;
   margin-top: 20px;
   margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.image2 {
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: auto;
   border-radius: 50%;
 }
 
