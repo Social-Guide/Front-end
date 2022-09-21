@@ -16,6 +16,7 @@ import { ConfiguracaoComponent } from './configuracao/configuracao.component';
 import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { toggleDarkTheme } from 'src/darkTheme';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { toggleDarkTheme } from 'src/darkTheme';
     FeedComponent,
     UserEditComponent,
     ConfiguracaoComponent,
-    MeuPerfilComponent
+    MeuPerfilComponent,
+    PostagemEditComponent
   ],
   imports: [
     BrowserModule,

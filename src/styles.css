@@ -89,8 +89,18 @@ html {
   border-bottom: 1px solid var(--cg-200);
 }
 
-.color-nav {
+/* .color-nav {
   background-color: #98E3AD !important;
+} */
+
+.color-nav.dark-theme{
+  --bkg-color: #23405B;
+}
+.color-nav{
+  --bkg-color: #98E3AD;
+}
+.color-nav{
+  background-color: var(--bkg-color) !important;
 }
 
 /* ----------------------------------------- Dark Theme */

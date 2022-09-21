@@ -8,6 +8,7 @@ import { FeedComponent } from './feed/feed.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MeuPerfilComponent } from './meu-perfil/meu-perfil.component';
 import { TemaComponent } from './tema/tema.component';
+import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'inicio', pathMatch: 'full' },
@@ -18,8 +19,8 @@ const routes: Routes = [
   {path: 'feed', component: FeedComponent},
   {path: 'user-edit/:id', component: UserEditComponent},
   {path: 'configuracao', component: ConfiguracaoComponent},
-  {path: 'meu-perfil/:id', component: MeuPerfilComponent}
-
+  {path: 'meu-perfil/:id', component: MeuPerfilComponent},
+  {path: 'postagem-edit/:id', component: PostagemEditComponent}
 ];
 
 @NgModule({
