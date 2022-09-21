@@ -176,8 +176,12 @@ export class FeedComponent implements OnInit {
       
     }, erro => {
       if(erro.status == 500){
-        const element = document.querySelector("#titulo");
-        if(element != null){
+        const element = (document.querySelector("#titulo") as HTMLInputElement);
+        console.log(element.value)
+        if(element == null){
+          alert("título não pode ser nulo")
+        }
+        else if(element.value.length <= 5 ){
           alert("Não foi possível concluir a postagem. Verifique se seu título tem mais de 5 caracteres.")
         }
       }
