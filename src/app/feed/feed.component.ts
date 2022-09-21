@@ -201,4 +201,14 @@ export class FeedComponent implements OnInit {
   clearTema() {
     this.tema = new Tema()
   }
+  wordCounter(){
+    if (this.postagem == null){
+      return 0
+    }
+    else if (this.postagem.texto == null){
+      return 0
+    }
+    
+    return this.postagem.texto.length
+  }
 }
