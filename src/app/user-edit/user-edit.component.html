@@ -1,0 +1,121 @@
+<div class="container-fluid navbar-paddin gradient">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="div card d-flex align-content-center mt-5 p-3 shadow bg-transparent">
+                    <div class="row d-flex justify-content-center mb-3">
+                        <img src="{{user.foto}}" alt="" class="img-fluid rounded-circle borda shadow" width="60%"
+                            onerror="this.src = '../../assets/img/user2.jpg'">
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <p class="text-center font-weight-bold color-titulo fs-25 font-theme">{{user.nome}}</p>
+                    </div>
+                    <div class="row d-flex justify-content-center mt-3">
+                        <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4" routerLink="/feed">
+                            <i class="fa fa-users mr-2" aria-hidden="true"></i>Feed
+                        </button>
+                        <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4"
+                            [routerLink]="['/meu-perfil', user.id]">
+                            <i class="fa fa-user-circle-o mr-2" aria-hidden="true"></i>Meu perfil
+                        </button>
+                        <!-- <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4" data-toggle="modal"
+                        data-target="#novaPostagem">
+                        <i class="fa fa-plus-square-o mr-2" aria-hidden="true"></i> Nova postagem
+                    </button>
+                    <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4"
+                        [routerLink]="['/user-edit', id]">
+                        <i class="fa fa-pencil-square-o mr-2" aria-hidden="true"></i>Editar perfil
+                    </button>
+                    <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4" data-toggle="modal"
+                        data-target="#novoTema">
+                        <i class="fa fa-pencil-square mr-2" aria-hidden="true"></i> Cadastrar tema
+                    </button> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9 mb-5">
+                <div class="container-fluid d-flex justify-content-center align-items-center">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-12 form-box ">
+                            <h4 class=" font color-titulo fs-25 mb-5">Atualizar usuário</h4>
+                            <form>
+                                <div class="row ">
+                                    <div class="col-6">
+                                        <div class="form-group ">
+                                            <label class="font-weight-bolder color-titulo" for="nome ">Nome:
+                                            </label>
+                                            <input [(ngModel)]="user.nome" class="input form-control" type="text"
+                                                name="nome" id="nome" placeholder="Seu nome">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="font-weight-bolder color-titulo" for="nome">Sobrenome:
+                                            </label>
+
+                                            <input [(ngModel)]="user.sobrenome" class=" input form-control" type="text"
+                                                name="sobrenome" id="sobrenome" placeholder="Seu sobrenome">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-bolder color-titulo" for="usuario">Usuário: </label>
+                                    <input [(ngModel)]="user.usuario" class="input form-control" type="text"
+                                        name="usuario" id="usuario" placeholder="Seu e-mail">
+                                </div>
+                                <div class="form-group">
+                                    <label class="font-weight-bolder color-titulo" for="foto">Link da foto: </label>
+
+                                    <input [(ngModel)]="user.foto" class=" input form-control" type="text" name="foto"
+                                        id="foto" placeholder="Link da foto">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="senha" class="font-weight-bolder color-titulo">Senha:
+                                            </label>
+                                            <input (input)="confirmSenha($event)" class="input form-control"
+                                                type="password" name="senha" id="senha" placeholder="Sua senha">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="font-weight-bolder color-titulo"
+                                                for="confirmarSenha">Confirmar
+                                                sua senha: </label>
+                                            <input [(ngModel)]="user.senha" class="input form-control" type="password"
+                                                name="confirmarSenha" id="confirmarSenha"
+                                                placeholder="Confirmar sua senha">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-bolder color-titulo" for="tipoDeUsuario">Tipo de
+                                        usuário:
+                                    </label>
+
+                                    <select [(ngModel)]="user.tipo" class="input form-control" name="tipoUser"
+                                        id="tipoUser" (change)="tipoUser($event)">
+                                        <option>Selecione um tipo de usuário</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="adm">Administrador</option>
+                                    </select>
+                                </div>
+                            </form>
+
+                            <div>
+                                <button type="submit" class="btn btn-info mr-4" (click)="atualizar()">Atualizar</button>
+                                <button type="submit" class="btn btn-outline-dark" routerLink="/feed">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

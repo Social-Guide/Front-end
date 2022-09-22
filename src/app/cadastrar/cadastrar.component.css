@@ -1,34 +1,21 @@
-#img-bg {
-    background-image: url("../../assets/img/Água.jpg");
-    min-height: 695px;
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: cover;
+.gradient {
+    height: 130vh;
+    background: linear-gradient(45deg, #293462, #83c59f, #859aec, #293462);
+    background-size: 300% 300%;
+     animation: colors 15s forwards infinite;
+    }
+    @keyframes colors {
+        0%{
+       background-position: 0% 50%;
+        }
+        50%{
+      background-position: 100% 50%;
+        }
+        100%{
+       background-position:  0% 50%;
+        }
 }
 
-#img-bg1 {
-    background-image: url("../../assets/img/Água.jpg");
-    min-height: 965px;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.mr-4 {
-    margin-right: 30px;
-}
-
-.color {
-    background-color: #345574;
-}
-
-.t-color{
-    color: #345574;
-}
-
-.color-2 {
-    background-color: #5b6c7e;
-}
 
 span{
     position: absolute;
@@ -42,8 +29,12 @@ span{
     padding-left: 2.375rem;
 }
 
-.form-color{
-    background-color: #345574;
+.form-box {
+    backdrop-filter: blur(40px);
+    padding: 0 70px;
+
+    border-radius: 20px;
+    margin: auto;
 }
 
 .color1 {

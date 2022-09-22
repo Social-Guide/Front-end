@@ -1,10 +1,10 @@
 #gradiente-bg {
-  background: linear-gradient(white, rgba(42, 163, 165, 0.3));   
+  background: linear-gradient(white, rgba(42, 163, 165, 0.3));
+  min-height: 965px;
 }
 
-.mgb-5 {
-  align-items: center;
-  padding: 60px;
+.margem{
+  margin-right: 100px;
 }
 
 .color1 {
@@ -48,10 +48,11 @@ span {
   color: #345574;
 }
 
-#img-bg{
+/* #img-bg{
   background-image: url('../../assets/img/img-entrar/entrar-bg.png');
   min-height: 965px;
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size:contain;
-}
+} */

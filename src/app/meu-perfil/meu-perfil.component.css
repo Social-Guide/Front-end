@@ -1,0 +1,31 @@
+a:hover {
+  color: #45515e !important;
+}
+
+.borda1 {
+  border: 3px solid #23405B !important;
+}
+
+.card.dark-theme {
+  --bkg-color: #111;
+}
+
+.card {
+  --bkg-color: #fff;
+}
+
+.card {
+  background-color: var(--bkg-color) !important;
+}
+
+.font-theme {
+  --bkg-color: #23405B;
+}
+
+.font-theme.dark-theme {
+  --bkg-color: #98E3AD;
+}
+
+.font-theme {
+  color: var(--bkg-color) !important;
+}

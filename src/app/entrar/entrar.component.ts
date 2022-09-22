@@ -36,7 +36,7 @@ export class EntrarComponent implements OnInit {
       if(erro.status == 401){
         const element = document.querySelector("#senha");
         if(element != null){
-          element.insertAdjacentHTML('afterend', '<p class="text-danger font-weight-bold mt-2 mb-2">• Senha incorreta</p>');
+          element.insertAdjacentHTML('afterend', '<p class="text-danger font-weight-bold mt-2 mb-2">• Usuário ou senha incorreta</p>');
         }
       }
     })

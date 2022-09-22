@@ -1,3 +1,14 @@
+.fa{
+    font-size: 14pt;
+}
+
+.t-azul{
+    color: #23405B;
+}
+.modal{
+  z-index: 100000;
+}
+
 .borda{
     border: 3px solid rgb(0, 0, 0);
     margin: auto;
@@ -10,4 +21,40 @@
 
 .btn{
   text-align: left !important;
+}
+
+.card.dark-theme{
+  --bkg-color: #111;
+}
+
+.card{
+  --bkg-color: #fff;
+}
+
+.card{
+  background-color: var(--bkg-color) !important;
+}
+
+.font-theme{
+  --bkg-color: #23405B;
+}
+
+.font-theme.dark-theme{
+  --bkg-color: #98E3AD;
+}
+
+.font-theme{
+  color: var(--bkg-color) !important;
+}
+
+.texto-div{
+  position: relative;
+}
+
+#wordcounter{
+  position:absolute;
+  bottom: 10px;
+  right:10px;
+  font-size: 12px;
+  color:gray;
 }

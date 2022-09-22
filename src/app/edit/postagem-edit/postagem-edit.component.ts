@@ -33,9 +33,9 @@ export class PostagemEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
-    if(environment.token == ''){
+    if (environment.token == '') {
       // alert('Sua sessão expirou! Faça login novamente!')
       this.router.navigate(['/entrar'])
     }
@@ -63,7 +63,7 @@ export class PostagemEditComponent implements OnInit {
     })
   }
 
-  findByIdUser(){
+  findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
     })
@@ -72,20 +72,23 @@ export class PostagemEditComponent implements OnInit {
   atualizar() {
     if (this.idTema == null) {
       const element = document.querySelector("#tema");
-      if(element != null){
+      if (element != null) {
         element.insertAdjacentHTML('afterend', '<p class="text-danger font-weight-bold mt-2 mb-2">Tema é obrigatório</p>');
       }
     }
     else {
+      this.tema = new Tema()
+      this.user = new User()
+      this.user.id = this.postagem.usuario.id
+      this.postagem.usuario = this.user
       this.tema.id = this.idTema
       this.postagem.tema = this.tema
 
       this.postagemService.putPostagem(this.postagem).subscribe((resp: Postagem) => {
         this.postagem = resp
         alert('Postagem atualizada com sucesso!')
-        this.router.navigate(['/feed'])
+        this.router.navigate(['/meu-perfil/0'])
       })
+    }
   }
-
-}
 }

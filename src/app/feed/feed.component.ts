@@ -7,6 +7,7 @@ import { Postagem } from '../model/Postagem';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { User } from '../model/User';
+import { cardDarkTheme, toggleDarkTheme } from 'src/darkTheme';
 
 @Component({
   selector: 'app-feed',
@@ -34,6 +35,8 @@ export class FeedComponent implements OnInit {
   idTema: number
 
   idUser = environment.id
+  theme: boolean
+
 
   constructor(
     private router: Router,
@@ -53,8 +56,16 @@ export class FeedComponent implements OnInit {
     this.findAllTemas()
     this.getAllTemas()
     this.getAllPostagens()
+    this.checktheme()
     // this.idTema = this.route.snapshot.params['id']
+    if(document.body.classList.contains('dark-theme')){
+      cardDarkTheme()
+    }
 
+  }
+  checktheme(){
+    this.theme = document.body.classList.contains('dark-theme')
+    return this.theme
   }
 
   findAllTemas() {
@@ -85,8 +96,6 @@ export class FeedComponent implements OnInit {
       this.listaTemas = resp
     })
   }
-
-
 
   findByIdTema(id: number) {
     this.temaService.getByIdTema(id).subscribe((resp: Tema) => {
@@ -164,10 +173,42 @@ export class FeedComponent implements OnInit {
 
       this.postagem = new Postagem()
       this.getAllPostagens()
+      
+    }, erro => {
+      if(erro.status == 500){
+        const titulo = (document.querySelector("#titulo") as HTMLInputElement);
+        const texto = (document.querySelector("#texto") as HTMLInputElement);
+        const tema = (document.querySelector("#tema") as HTMLInputElement);
+        if(titulo.value == ""){
+          alert("Não foi possível concluir a postagem. Título não pode ser nulo")
+        }
+        else if(titulo.value.length < 5 ){
+          alert("Não foi possível concluir a postagem. Verifique se seu título tem mais de 5 caracteres.")
+        }
+        else if(texto.value == ""){
+          alert('Não foi possível concluir a postagem. Texto não pode ser nulo')
+        }
+        else if(texto.value.length > 255){
+          alert('Não foi possível concluir a postagem. Verifique se seu texto tem menos de 255 caracteres.')
+        }
+        else if(tema.value == ""){
+          alert('Não foi possível concluir a postagem. Selecione um tema')
+        }
+      }
     })
   }
 
   clearTema() {
     this.tema = new Tema()
+  }
+  wordCounter(){
+    if (this.postagem == null){
+      return 0
+    }
+    else if (this.postagem.texto == null){
+      return 0
+    }
+    
+    return this.postagem.texto.length
   }
 }

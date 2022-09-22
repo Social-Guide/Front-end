@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { toggleDarkTheme } from 'src/darkTheme';
+
 
 @Component({
   selector: 'app-menu',
@@ -19,6 +21,7 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0, 0)
   }
 
   sair(){
@@ -30,8 +33,9 @@ export class MenuComponent implements OnInit {
     environment.id = 0
   }
 
-  toggleDarkTheme(){
-    document.body.classList.toggle('dark-theme')
-    document.body.classList.toggle('bg-secundary')
+  darkTheme(){
+    toggleDarkTheme()
   }
+
 }
+

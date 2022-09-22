@@ -1,0 +1,77 @@
+/* @import url('https://fonts.googleapis.com/css2? family= Poppins:wght@300;400;500 & display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.font{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+} */
+
+.form-box {
+    background-color: var(--bkg-color) !important;
+}
+
+.form-box {
+    /* --bkg-color: rgba(255, 255, 255, 0.4); */
+    /* background-color: rgba(255, 255, 255, 0.4); */
+    backdrop-filter: blur(40px);
+    padding: 50px 0;
+    width: 700px;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.form-box{
+    --bkg-color: rgba(255, 255, 255, 0.4);
+}
+
+.form-box.dark-theme {
+    --bkg-color: rgba(37, 37, 37, 0.4) !important;
+    /* background-color: rgba(58, 58, 58, 0.4); */
+
+}
+
+/* span {
+    position: absolute;
+    margin-left: 16px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: rgba(42, 56, 165, 0.579);
+  } */
+
+.input{
+ background-color: rgba(255, 255, 255, 0.941);
+ border-radius: 10px;
+ 
+ 
+ color: #616161;
+
+}
+
+
+.gradient {
+display: flex;
+align-items: center;
+justify-content: center;
+/* height: 130vh;
+width: 100vw; */
+background: linear-gradient(45deg, #293462, #83c59f, #859aec, #293462);
+background-size: 300% 300%;
+ animation: colors 15s forwards infinite;
+}
+@keyframes colors {
+    0%{
+   background-position: 0% 50%;
+    }
+    50%{
+  background-position: 100% 50%;
+    }
+    100%{
+   background-position:  0% 50%;
+    }
+}
