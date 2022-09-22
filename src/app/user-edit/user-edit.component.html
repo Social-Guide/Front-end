@@ -1,4 +1,4 @@
-<div class="container-fluid navbar-paddin gradient">
+<div class="container-fluid navbar-paddin gradient" [ngClass]="{'dark-theme':checktheme()}">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -37,13 +37,13 @@
             <div class="col-md-9 mb-5">
                 <div class="container-fluid d-flex justify-content-center align-items-center">
                     <div class="row d-flex justify-content-center">
-                        <div class="col-md-12 form-box ">
+                        <div class="col-md-12 form-box" [ngClass]="{'dark-theme':checktheme()}">
                             <h4 class=" font color-titulo fs-25 mb-5">Atualizar usuário</h4>
                             <form>
-                                <div class="row ">
+                                <div class="row">
                                     <div class="col-6">
-                                        <div class="form-group ">
-                                            <label class="font-weight-bolder color-titulo" for="nome ">Nome:
+                                        <div class="form-group">
+                                            <label class="font-weight-bolder color-titulo" for="nome">Nome:
                                             </label>
                                             <input [(ngModel)]="user.nome" class="input form-control" type="text"
                                                 name="nome" id="nome" placeholder="Seu nome">
@@ -110,7 +110,7 @@
 
                             <div>
                                 <button type="submit" class="btn btn-info mr-4" (click)="atualizar()">Atualizar</button>
-                                <button type="submit" class="btn btn-outline-dark" routerLink="/feed">Cancelar</button>
+                                <button type="submit" class="btn btn-dark" routerLink="/feed">Cancelar</button>
                             </div>
                         </div>
                     </div>

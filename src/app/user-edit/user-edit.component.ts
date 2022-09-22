@@ -15,6 +15,7 @@ export class UserEditComponent implements OnInit {
   idUser: number
   confirmarSenha: string
   tipoUsuario: string
+  theme: boolean
 
   constructor(
     private authService: AuthService,
@@ -65,6 +66,11 @@ export class UserEditComponent implements OnInit {
     this.authService.getByIdUser(id).subscribe((resp: User) => {
       this.user = resp
     })
+  }
+
+  checktheme(){
+    this.theme = document.body.classList.contains('dark-theme')
+    return this.theme
   }
 
 }

@@ -9,6 +9,7 @@
 
 .form-box {
     background-color: var(--bkg-color) !important;
+    color: var(--color) !important;
 }
 
 .form-box {
@@ -30,7 +31,7 @@
 }
 
 .form-box.dark-theme {
-    --bkg-color: rgba(37, 37, 37, 0.4) !important;
+    --bkg-color: rgba(1, 1, 1, 0.4) !important;
     /* background-color: rgba(58, 58, 58, 0.4); */
 
 }
@@ -60,7 +61,8 @@ align-items: center;
 justify-content: center;
 /* height: 130vh;
 width: 100vw; */
-background: linear-gradient(45deg, #293462, #83c59f, #859aec, #293462);
+/*background: linear-gradient(45deg, #293462, #83c59f, #859aec, #293462);*/
+background: var(--bkg-color);
 background-size: 300% 300%;
  animation: colors 15s forwards infinite;
 }
@@ -74,4 +76,17 @@ background-size: 300% 300%;
     100%{
    background-position:  0% 50%;
     }
+}
+
+.gradient{
+    --bkg-color: linear-gradient(45deg, #293462, #83c59f, #859aec, #293462);
+    --color: #293462;
+}
+.gradient.dark-theme{
+    --bkg-color: linear-gradient(45deg, #83c59f, #293462, #859aec);
+    --color: #83c59f;
+}
+
+label,h4,p{
+    color: var(--color) !important;
 }
