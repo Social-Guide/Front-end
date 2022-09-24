@@ -18,6 +18,7 @@ import { OrderModule } from 'ngx-order-pipe';
 import { toggleDarkTheme } from 'src/darkTheme';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

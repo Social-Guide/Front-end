@@ -8,6 +8,7 @@ import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { User } from '../model/User';
 import { cardDarkTheme, toggleDarkTheme } from 'src/darkTheme';
+import { Comentario } from '../model/Comentario';
 
 @Component({
   selector: 'app-feed',
@@ -28,6 +29,7 @@ export class FeedComponent implements OnInit {
   tema: Tema = new Tema()
   postagem: Postagem = new Postagem()
   user: User = new User()
+  comentario: Comentario = new Comentario()
 
   listaTemas: Tema[]
   listaPostagem: Postagem[]
@@ -36,6 +38,7 @@ export class FeedComponent implements OnInit {
 
   idUser = environment.id
   theme: boolean
+  comentarioTexto: string
 
 
   constructor(
@@ -210,5 +213,12 @@ export class FeedComponent implements OnInit {
     }
     
     return this.postagem.texto.length
+  }
+
+  enviarComentario(id:number) {
+    this.comentario = new Comentario()
+    this.comentario.comentarios = (<HTMLInputElement>document.getElementById("comentario")).value;
+    this.postagemService.postComentario(this.comentario, id).subscribe(() => {
+    });
   }
 }
