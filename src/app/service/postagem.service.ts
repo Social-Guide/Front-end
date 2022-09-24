@@ -44,8 +44,8 @@ export class PostagemService {
     return this.http.delete(`${environment.url}/postagens/like/${postagem}/${environment.id}`, this.token)
   }
 
-  postComentario(comentario: Comentario, postagem: number){
-    return this.http.post(`${environment.url}/postagens/comentarios/${postagem}/${environment.id}`, comentario, this.token)
+  postComentario(comentario: Comentario): Observable<Comentario>{
+    return this.http.post<Comentario>(`${environment.url}/postagens/comentarios/`, comentario, this.token)
   }
 
 

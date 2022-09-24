@@ -262,8 +262,8 @@
         <div class="btn" (click)="clickLike(item.id, item.user_liked)">
           <i [ngClass]="(item.user_liked) ? 'fa fa-thumbs-up like':'fa fa-thumbs-o-up like'"> {{ item.qtd_like }} </i>
         </div>
-        <input type="text" name="comentario" id="comentario">
-        <button class="btn" (click)="enviarComentario(item.id)">Enviar</button>
+        <input type="text" name="comentario" id="comentario" [(ngModel)]="item.localcomentario">
+        <button class="btn" (click)="enviarComentario(item.id, item.localcomentario)">Enviar</button>
       </div>
     </div>
 

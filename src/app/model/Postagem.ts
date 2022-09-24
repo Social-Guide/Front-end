@@ -1,3 +1,4 @@
+import { Comentario } from "./Comentario"
 import { Like } from "./Like"
 import { Tema } from "./Tema"
 import { User } from "./User"
@@ -16,4 +17,6 @@ export class Postagem{
     public like: Like[]
     public qtd_like: number
     public user_liked: boolean
+    public comentarios: Comentario[]
+    public localcomentario: string
 }

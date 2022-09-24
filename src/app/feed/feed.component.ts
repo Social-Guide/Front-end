@@ -215,10 +215,22 @@ export class FeedComponent implements OnInit {
     return this.postagem.texto.length
   }
 
-  enviarComentario(id:number) {
+  enviarComentario(id:number,comentario:string) {
     this.comentario = new Comentario()
-    this.comentario.comentarios = (<HTMLInputElement>document.getElementById("comentario")).value;
-    this.postagemService.postComentario(this.comentario, id).subscribe(() => {
+    //this.authService.getByIdUser(environment.id).subscribe((resp: User) => {
+    //  this.comentario.usuario = resp
+    //});
+    this.comentario.usuario = new User()
+    this.comentario.usuario.id = environment.id
+    //this.postagemService.getByIdPostagem(id).subscribe((resp:Postagem) =>{
+    //  this.comentario.postagem = resp
+    //})
+    this.comentario.postagem = new Postagem()
+    this.comentario.postagem.id = id
+    this.comentario.comentarios = comentario;
+    console.log(this.comentario)
+    this.postagemService.postComentario(this.comentario).subscribe(() => {
     });
+    
   }
 }
