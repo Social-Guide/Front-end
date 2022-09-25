@@ -48,5 +48,8 @@ export class PostagemService {
     return this.http.post<Comentario>(`${environment.url}/postagens/comentarios/`, comentario, this.token)
   }
 
+  getComentario(id:number): Observable<Comentario>{
+    return this.http.get<Comentario>(`${environment.url}/postagens/comentarios/${id}`,this.token)
+  }
 
 }

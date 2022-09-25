@@ -9,6 +9,7 @@ import { PostagemService } from '../service/postagem.service';
 import { User } from '../model/User';
 import { cardDarkTheme, toggleDarkTheme } from 'src/darkTheme';
 import { Comentario } from '../model/Comentario';
+import { Directive, Output, EventEmitter, Input, SimpleChange} from '@angular/core';
 
 @Component({
   selector: 'app-feed',
@@ -40,7 +41,9 @@ export class FeedComponent implements OnInit {
   theme: boolean
   comentarioTexto: string
 
+  comentariolocal: string
 
+  @Output() onCreate: EventEmitter<any> = new EventEmitter<any>();
   constructor(
     private router: Router,
     private temaService: TemaService,
@@ -217,20 +220,22 @@ export class FeedComponent implements OnInit {
 
   enviarComentario(id:number,comentario:string) {
     this.comentario = new Comentario()
-    //this.authService.getByIdUser(environment.id).subscribe((resp: User) => {
-    //  this.comentario.usuario = resp
-    //});
     this.comentario.usuario = new User()
     this.comentario.usuario.id = environment.id
-    //this.postagemService.getByIdPostagem(id).subscribe((resp:Postagem) =>{
-    //  this.comentario.postagem = resp
-    //})
     this.comentario.postagem = new Postagem()
     this.comentario.postagem.id = id
     this.comentario.comentarios = comentario;
-    console.log(this.comentario)
     this.postagemService.postComentario(this.comentario).subscribe(() => {
-    });
-    
+      this.getAllPostagens()
+    });    
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      console.log(resp[0])
+    });    
+  }
+  getComentario2(id:number){
+    console.log(id)
+    this.postagemService.getComentario(id).subscribe( (resp: Comentario) =>{
+      return resp.usuario.nome
+    })
   }
 }
