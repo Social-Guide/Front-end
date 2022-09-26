@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { cardDarkTheme } from 'src/darkTheme';
 import { environment } from 'src/environments/environment';
+import { Comentario } from '../model/Comentario';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
@@ -22,6 +23,7 @@ export class MeuPerfilComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   user: User = new User()
+  comentario: Comentario = new Comentario()
 
   listaPostagem: Postagem[]
   listaTemas: Tema[]
@@ -75,7 +77,17 @@ export class MeuPerfilComponent implements OnInit {
   }
 
   setPostagem(postagem: Postagem){
-    console.log(postagem)
     this.postagem = postagem
+  }
+
+  setComentario(comentario: Comentario){
+    this.comentario = comentario
+  }
+
+  apagarComentario(){
+    this.postagemService.deleteComentario(this.comentario.id).subscribe(()=>{
+      alert('Comentário apagado com sucesso!')
+      this.findByIdUser()
+    })
   }
 }

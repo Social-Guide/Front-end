@@ -224,18 +224,14 @@ export class FeedComponent implements OnInit {
     this.comentario.usuario.id = environment.id
     this.comentario.postagem = new Postagem()
     this.comentario.postagem.id = id
-    this.comentario.comentarios = comentario;
+    this.comentario.comentarios = comentario.trim();
+    this.comentario.nome = environment.nome + ' ' + environment.sobrenome
+    this.comentario.foto = environment.foto 
     this.postagemService.postComentario(this.comentario).subscribe(() => {
       this.getAllPostagens()
     });    
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       console.log(resp[0])
-    });    
-  }
-  getComentario2(id:number){
-    console.log(id)
-    this.postagemService.getComentario(id).subscribe( (resp: Comentario) =>{
-      return resp.usuario.nome
-    })
+    });
   }
 }

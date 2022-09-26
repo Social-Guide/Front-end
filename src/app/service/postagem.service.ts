@@ -52,4 +52,7 @@ export class PostagemService {
     return this.http.get<Comentario>(`${environment.url}/postagens/comentarios/${id}`,this.token)
   }
 
+  deleteComentario(id: number){
+    return this.http.delete(`${environment.url}/postagens/comentarios/${id}`, this.token)
+  }
 }

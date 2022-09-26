@@ -29,3 +29,14 @@ a:hover {
 .font-theme {
   color: var(--bkg-color) !important;
 }
+
+.pd-comentario{
+  position:absolute;
+}
+
+.color-comentario{
+  /* background-color: #98E3AD; */
+  border-style: solid;
+  border-radius: 10px;
+  border: 1px dashed gray;
+}

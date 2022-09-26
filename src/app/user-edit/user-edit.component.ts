@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/model/User';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment';
+import { Comentario } from '../model/Comentario';
 
 @Component({
   selector: 'app-user-edit',
@@ -60,6 +61,12 @@ export class UserEditComponent implements OnInit {
         environment.id = 0
         this.router.navigate(['/entrar'])
       })
+      var comentario = new Comentario()
+      comentario.usuario = new User()
+      comentario.foto = this.user.foto
+      comentario.nome = this.user.nome + ' ' + this.user.sobrenome
+      comentario.usuario.id = this.user.id
+      this.authService.atualizarUserComentario(comentario).subscribe(() =>{})
   }
 
   findByIdUser(id: number) {

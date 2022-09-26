@@ -6,4 +6,6 @@ export class Comentario {
     public postagem: Postagem
     public usuario: User
     public comentarios: string
+    public nome: string
+    public foto: string
 }

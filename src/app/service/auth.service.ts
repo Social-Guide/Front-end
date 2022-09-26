@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Comentario } from '../model/Comentario';
 import { User } from '../model/User';
 import { UserLogin } from '../model/UserLogin';
 
@@ -41,5 +42,12 @@ export class AuthService {
     }
 
     return ok
+  }
+
+  atualizarUserComentario(comentario: Comentario){
+    var token = {
+      headers: new HttpHeaders().set('Authorization', environment.token)
+    }
+    return this.http.put<number>(`${environment.url}/postagens/comentarios/update`, comentario, token)
   }
 }

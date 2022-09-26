@@ -263,18 +263,20 @@
         <div class="btn" (click)="clickLike(item.id, item.user_liked)">
           <i [ngClass]="(item.user_liked) ? 'fa fa-thumbs-up like':'fa fa-thumbs-o-up like'"> {{item.qtd_like}} </i>
         </div>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-2 d-flex justify-content-center">
-              <img src="" alt="">
-            </div>
-            <div class="col-md-10">
-              <div *ngFor='let comentario of item.comentarios'>
-                <div class="col-md-12">
-                  <p>{{comentario.comentarios}}</p>
+
+        <div *ngFor='let comentario of item.comentarios'>
+          <div class="container-fluid">
+            <div class="row mx-3 mb-1 color-comentario">
+              <div class="col-md-2 d-flex align-items-center d-flex justify-content-center">
+                <img src={{comentario.foto}} alt="" class="rounded-circle" width="30px" height="30px"
+                  onerror="this.src = '../../assets/img/user2.jpg'">
+              </div>
+              <div class="col-md-10 d-flex align-items-center">
+                <div class="row col-md-12 pd-comentario mb-3">
+                  <p class="font-weight-bold">{{comentario.nome}}</p>
                 </div>
-                <div class="col-md-12">
-                  <p>{{getComentario2(comentario.id)}}</p>
+                <div class="row col-md-12 mt-4">
+                  <p class="font-weight-light font-italic">{{comentario.comentarios}}</p>
                 </div>
               </div>
             </div>
