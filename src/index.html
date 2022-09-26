@@ -11,5 +11,22 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
   <app-root></app-root>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <style>
+    .access-button {
+    width: 30%!important;    
+    border-radius: 50px!important;
+    border: 4px solid #ffffff65!important;
+}
+  </style>
 </body>
 </html>
