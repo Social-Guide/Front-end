@@ -4,6 +4,7 @@ import { User } from 'src/app/model/User';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment';
 import { Comentario } from '../model/Comentario';
+import { toggleDarkTheme } from 'src/darkTheme';
 
 @Component({
   selector: 'app-user-edit',
@@ -59,6 +60,10 @@ export class UserEditComponent implements OnInit {
         environment.sobrenome = ''
         environment.foto = ''
         environment.id = 0
+        environment.darktheme = false
+        if(document.body.classList.contains('dark-theme')){
+          toggleDarkTheme()
+        }
         this.router.navigate(['/entrar'])
       })
       var comentario = new Comentario()
