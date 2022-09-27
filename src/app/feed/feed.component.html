@@ -20,9 +20,6 @@
           <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4" [routerLink]="['/user-edit', id]">
             <i class="fa fa-pencil-square-o mr-2" aria-hidden="true"></i>Editar perfil
           </button>
-          <!-- <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4" routerLink="/configuracao">
-            <i class="fa fa-sliders mr-2" aria-hidden="true"></i> Configuração
-          </button> -->
           <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4" data-toggle="modal"
             data-target="#novoTema">
             <i class="fa fa-pencil-square mr-2" aria-hidden="true"></i> Cadastrar tema
@@ -85,7 +82,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content" [ngClass]="{'dark-theme':checktheme()}">
             <div class="modal-header">
-              <h5 class="modal-title" id="TituloModalCentralizado">Novo Tema</h5>
+              <h5 class="modal-title font-theme" id="TituloModalCentralizado">Novo Tema</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -150,7 +147,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content" [ngClass]="{'dark-theme':checktheme()}">
             <div class="modal-header">
-              <h5 class="modal-title" id="TituloModalCentralizado">Novo Tema</h5>
+              <h5 class="modal-title font-theme" id="TituloModalCentralizado">Apagar Tema</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -159,8 +156,6 @@
               <div class="container">
                 <div class="row mb-5">
                   <div class="col-md-12">
-
-                    <h1 class="text-center">Apagar Tema </h1>
                   </div>
                 </div>
 
@@ -197,7 +192,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content" [ngClass]="{'dark-theme':checktheme()}">
             <div class="modal-header">
-              <h5 class="modal-title" id="TituloModalCentralizado">Novo Tema</h5>
+              <h5 class="modal-title font-theme" id="TituloModalCentralizado">Atualizar Tema</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -206,7 +201,6 @@
               <div class="container">
                 <div class="row">
                   <div class="col-md-12">
-                    <h1 class="text-center">Atualizar Tema</h1>
                   </div>
                 </div>
                 <div class="row d-flex justify-content-center">
@@ -243,14 +237,15 @@
             </div>
           </div>
 
-          <div class="d-flex justify-content-end mt-3">
+          <div class="d-flex justify-content-end mt-3 mr-5">
             <p class="text-right"><i class="fa fa-calendar" aria-hidden="true"></i>
               {{item.data | date: 'dd/MM/yyyy'}}</p>
-            <p class="text-right ml-4 mr-5"><i class="fa fa-bookmark-o" aria-hidden="true"></i>
-              Tema: {{item.tema.descricao}}</p>
           </div>
         </div>
-
+        <div class="d-flex justify-content-start">
+          <p class="text-left ml-4 mr-5"><i class="fa fa-bookmark-o" aria-hidden="true"></i>
+            Tema: {{item.tema.descricao}}</p>
+        </div>
         <hr class="mr-0 ml-0">
         <p class="card-title fs-25 ml-4 mb-3 bg-transparent">{{item.titulo}}</p>
         <div class="d-flex justify-content-center">
@@ -271,12 +266,12 @@
                 <img src={{comentario.foto}} alt="" class="rounded-circle" width="30px" height="30px"
                   onerror="this.src = '../../assets/img/user2.jpg'">
               </div>
-              <div class="col-md-10 d-flex align-items-center">
-                <div class="row col-md-12 pd-comentario mb-3">
-                  <p class="font-weight-bold">{{comentario.nome}}</p>
+              <div class="col-md-10">
+                <div class="row col-md-12 pd-comentario">
+                  <p class="font-weight-bold text-left w-100">{{comentario.nome}}</p>
                 </div>
-                <div class="row col-md-12 mt-4">
-                  <p class="font-weight-light font-italic">{{comentario.comentarios}}</p>
+                <div class="row col-md-12">
+                  <p class="font-weight-light font-italic text-left w-100">{{comentario.comentarios}}</p>
                 </div>
               </div>
             </div>

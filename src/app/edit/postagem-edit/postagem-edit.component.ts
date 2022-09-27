@@ -23,6 +23,7 @@ export class PostagemEditComponent implements OnInit {
   listaTemas: Tema[]
   idTema: number
   idUser = environment.id
+  theme: boolean
 
   constructor(
     private router: Router,
@@ -90,5 +91,10 @@ export class PostagemEditComponent implements OnInit {
         this.router.navigate(['/meu-perfil/0'])
       })
     }
+  }
+
+  checktheme(){
+    this.theme = document.body.classList.contains('dark-theme')
+    return this.theme
   }
 }

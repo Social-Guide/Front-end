@@ -31,6 +31,9 @@ export class MenuComponent implements OnInit {
     environment.sobrenome = ''
     environment.foto = ''
     environment.id = 0
+    if(document.body.classList.contains('dark-theme')){
+      toggleDarkTheme()
+    }
   }
 
   darkTheme(){

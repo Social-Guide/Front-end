@@ -1,0 +1,11 @@
+.font-theme{
+    --bkg-color: #23405B;
+  }
+  
+  .font-theme.dark-theme{
+    --bkg-color: #98E3AD;
+  }
+  
+  .font-theme{
+    color: var(--bkg-color) !important;
+  }
