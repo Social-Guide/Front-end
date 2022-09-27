@@ -6,5 +6,6 @@ export const environment = {
   id: 0,
   foto: '',
   usuario: '',
-  url:'https://socialguide.herokuapp.com'
+  url:'https://socialguide.herokuapp.com',
+  darktheme : false
 };

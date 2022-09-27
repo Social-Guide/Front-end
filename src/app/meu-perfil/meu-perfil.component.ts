@@ -53,8 +53,7 @@ export class MeuPerfilComponent implements OnInit {
   }
 
   checktheme(){
-    this.theme = document.body.classList.contains('dark-theme')
-    return this.theme
+    return environment.darktheme
   }
 
   findByIdUser(){

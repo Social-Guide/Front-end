@@ -26,7 +26,7 @@
     margin-top: 60px;
 }
 
-.form-box{
+.form-box {
     --bkg-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -45,48 +45,66 @@
     color: rgba(42, 56, 165, 0.579);
   } */
 
-.input{
- background-color: rgba(255, 255, 255, 0.941);
- border-radius: 10px;
- 
- 
- color: #616161;
+.input {
+    background-color: rgba(255, 255, 255, 0.941);
+    border-radius: 10px;
+
+
+    color: #616161;
 
 }
 
 
 .gradient {
-display: flex;
-align-items: center;
-justify-content: center;
-/* height: 130vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 130vh;
 width: 100vw; */
-/*background: linear-gradient(45deg, #293462, #83c59f, #859aec, #293462);*/
-background: var(--bkg-color);
-background-size: 300% 300%;
- animation: colors 15s forwards infinite;
+    /*background: linear-gradient(45deg, #293462, #83c59f, #859aec, #293462);*/
+    background: var(--bkg-color);
+    background-size: 300% 300%;
+    animation: colors 15s forwards infinite;
 }
+
 @keyframes colors {
-    0%{
-   background-position: 0% 50%;
+    0% {
+        background-position: 0% 50%;
     }
-    50%{
-  background-position: 100% 50%;
+
+    50% {
+        background-position: 100% 50%;
     }
-    100%{
-   background-position:  0% 50%;
+
+    100% {
+        background-position: 0% 50%;
     }
 }
 
-.gradient{
+.gradient {
     --bkg-color: linear-gradient(45deg, #293462, #83c59f, #859aec, #293462);
     --color: #293462;
 }
-.gradient.dark-theme{
+
+.gradient.dark-theme {
     --bkg-color: linear-gradient(45deg, #83c59f, #293462, #859aec);
     --color: #83c59f;
 }
 
-label,h4,p{
+label,
+h4,
+p {
     color: var(--color) !important;
+}
+
+.color-nav.dark-theme {
+    --bkg-color: #111;
+}
+
+.color-nav {
+    --bkg-color: rgba(255, 255, 255, 0.075);
+}
+
+.color-nav {
+    background-color: var(--bkg-color) !important;
 }

@@ -31,12 +31,14 @@ export class MenuComponent implements OnInit {
     environment.sobrenome = ''
     environment.foto = ''
     environment.id = 0
+    environment.darktheme = false
     if(document.body.classList.contains('dark-theme')){
       toggleDarkTheme()
     }
   }
 
   darkTheme(){
+    environment.darktheme = !environment.darktheme
     toggleDarkTheme()
   }
 

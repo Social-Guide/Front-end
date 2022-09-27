@@ -10,7 +10,8 @@ export const environment = {
   id: 0,
   foto: '',
   usuario: '',
-  url:'http://localhost:8080'
+  url:'http://localhost:8080',
+  darktheme : false
 };
 
 /*

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <div class="div card d-flex align-content-center mt-5 p-3 shadow bg-transparent">
+                <div class="div card d-flex align-content-center mt-5 p-3 shadow bg-transparent color-nav">
                     <div class="row d-flex justify-content-center mb-3">
                         <img src="{{user.foto}}" alt="" class="img-fluid rounded-circle borda shadow" width="60%"
                             onerror="this.src = '../../assets/img/user2.jpg'">
@@ -18,18 +18,6 @@
                             [routerLink]="['/meu-perfil', user.id]">
                             <i class="fa fa-user-circle-o mr-2" aria-hidden="true"></i>Meu perfil
                         </button>
-                        <!-- <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4" data-toggle="modal"
-                        data-target="#novaPostagem">
-                        <i class="fa fa-plus-square-o mr-2" aria-hidden="true"></i> Nova postagem
-                    </button>
-                    <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4"
-                        [routerLink]="['/user-edit', id]">
-                        <i class="fa fa-pencil-square-o mr-2" aria-hidden="true"></i>Editar perfil
-                    </button>
-                    <button class="w-100 text-left btn btn-blue text-white mx-3 my-1 pl-4" data-toggle="modal"
-                        data-target="#novoTema">
-                        <i class="fa fa-pencil-square mr-2" aria-hidden="true"></i> Cadastrar tema
-                    </button> -->
                     </div>
                 </div>
             </div>
