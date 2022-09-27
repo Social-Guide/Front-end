@@ -98,7 +98,7 @@ p {
 }
 
 .color-nav.dark-theme {
-    --bkg-color: #111;
+    --bkg-color: rgb(17, 17, 17, 0.075);
 }
 
 .color-nav {
