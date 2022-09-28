@@ -1,15 +1,37 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
   <meta charset="utf-8">
   <title>Social Guide</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="assets/img/iconSocialGuide/black.png">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 </head>
+
 <body class="d-flex flex-column min-vh-100">
   <app-root></app-root>
+  <!--Vlibras-->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <style>
+    .access-button {
+      width: 35%!important;
+      border-radius: 50px!important;
+      border: 5px solid rgba(255, 255, 255, 0.427)!important;
+    }
+  </style>
 </body>
+
 </html>
